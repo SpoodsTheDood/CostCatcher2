@@ -1,7 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-/* You can add global styles to this file, and also import other style files */
 *{
-    margin: 0;
     padding: 0;
 }
 button{
@@ -12,6 +10,7 @@ button{
     border:#F4AF23;
     border-style: groove;
     font-size: 250%;
+    
 }
 /*.column {
   margin-top: 5%;
@@ -51,7 +50,7 @@ button{
 html{
     height: 100%;
     width: 100%;
-    background:linear-gradient(#890C58, #3C1053);
+    /*background:linear-gradient(#890C58, #3C1053);*/
 }
 h1{
 font-size: 100px;
