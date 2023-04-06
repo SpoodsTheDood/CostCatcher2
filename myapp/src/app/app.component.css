@@ -59,6 +59,12 @@ background-clip: text;
 -webkit-text-fill-color: transparent;
 background-image: linear-gradient(#4AC9E3, #F4AF23);
 }
+mat-grid-list{
+  background-color:#3C1053;
+  border: #F4AF23;
+  border-style: groove;
+  color: #D7A9E3;
+}
 .modifierButtons{
     display: flex;
     justify-content: space-between;
