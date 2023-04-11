@@ -26,27 +26,10 @@ button{
     
   }*/
   
-  .column {
-    margin-top: 5%;
-    text-align: center;
-    border:#F4AF23;
-    border-style: double;
-    background-color: #3C1053;
-    color: #D7A9E3;
-    width: 50%;
-    font-size: 200%;
-    margin: auto;
-    padding: 1%;
-    float: left;
-  }
+ 
   
-  .left, .right {
-    width: 25%;
-  }
-  
-  .middle {
-    width: 25%;
-  }
+
+
 html{
     height: 100%;
     width: 100%;
@@ -59,12 +42,7 @@ background-clip: text;
 -webkit-text-fill-color: transparent;
 background-image: linear-gradient(#4AC9E3, #F4AF23);
 }
-mat-grid-list{
-  background-color:#3C1053;
-  border: #F4AF23;
-  border-style: groove;
-  color: #D7A9E3;
-}
+
 .modifierButtons{
     display: flex;
     justify-content: space-between;

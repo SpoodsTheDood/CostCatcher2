@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 
+
 export interface Tile {
   color: string;
   cols: number;
@@ -14,6 +15,11 @@ export interface Tile {
 })
 export class AppComponent {
   title = 'test';
-  
+  addItem(){
+    var allPrices = document.getElementById("priceList")
+    var allLocations = document.getElementById("locList")
+    var allDates = document.getElementById("billList")
+
+  }
 
 }

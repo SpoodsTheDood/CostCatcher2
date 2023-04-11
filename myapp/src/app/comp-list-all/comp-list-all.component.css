@@ -1,0 +1,37 @@
+.column {
+    text-align: center;
+    border:#F4AF23;
+    border-style: double;
+    background-color: #3C1053;
+    color: #D7A9E3;
+    width: 50%;
+    font-size: 200%;
+    margin: auto;
+    padding: 1%;
+    float: left;
+  }
+  
+  .left, .right {
+    width: 25%;
+  }
+  
+  .middle {
+    width: 25%;
+  }
+
+figcaption{
+    color: #D7A9E3;
+    font-size: 20pt;
+  }
+
+ul{
+    align-content: center;
+  justify-content: space-between;
+  vertical-align: top;
+  float: left;
+  }
+  .ulComp{
+    display: flex;
+    align-content: center;
+  justify-content: space-between;
+  }
