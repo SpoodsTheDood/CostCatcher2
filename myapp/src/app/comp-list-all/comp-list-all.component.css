@@ -1,21 +1,33 @@
+
+
+
+button{
+  text-align: center;
+  color:#D7A9E3;
+  background-color: #3C1053;
+  padding: 1%;
+  border:#F4AF23;
+  border-style: groove;
+  font-size: 250%;
+  
+}
 .column {
-    text-align: center;
     border:#F4AF23;
     border-style: double;
     background-color: #3C1053;
     color: #D7A9E3;
-    width: 50%;
+    width: 30%;
     font-size: 200%;
     margin: auto;
     padding: 1%;
     float: left;
   }
   
-  .left, .right {
-    width: 25%;
+  .middle, .right {
+    width: 15%;
   }
   
-  .middle {
+  .left {
     width: 25%;
   }
 
