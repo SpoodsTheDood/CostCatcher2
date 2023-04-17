@@ -6,7 +6,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MatCardModule} from '@angular/material/card';
 import { CompUpcomingComponent } from './comp-upcoming/comp-upcoming.component';
-import { CompListAllComponent } from './comp-list-all/comp-list-all.component'
+import { CompListAllComponent } from './comp-list-all/comp-list-all.component';
+import { CompMakeServiceComponent } from './comp-make-service/comp-make-service.component'
 //import { CardModule } from '@coreui/angular'
 
 //import { AnimationEvent } from '@angular/animations';
@@ -14,7 +15,8 @@ import { CompListAllComponent } from './comp-list-all/comp-list-all.component'
   declarations: [
     AppComponent,
     CompUpcomingComponent,
-    CompListAllComponent
+    CompListAllComponent,
+    CompMakeServiceComponent
   ],
   imports: [
     BrowserModule,

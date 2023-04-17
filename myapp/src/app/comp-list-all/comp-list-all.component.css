@@ -16,19 +16,20 @@ button{
     border-style: double;
     background-color: #3C1053;
     color: #D7A9E3;
-    width: 30%;
+    width: 100%;
     font-size: 200%;
     margin: auto;
     padding: 1%;
     float: left;
+    display: block;
   }
   
   .middle, .right {
-    width: 15%;
+    width: 25%;
   }
   
   .left {
-    width: 25%;
+    width: 40%;
   }
 
 figcaption{

@@ -12,8 +12,6 @@
     border-style:double;
     border-width: 5pt;
     width: 30%;
-    display: flex;
-    justify-content: space-between;
   }
   mat-card-header{
     font-size: 50pt;
