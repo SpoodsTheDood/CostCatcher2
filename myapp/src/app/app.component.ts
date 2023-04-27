@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+
+
 export interface Tile {
   color: string;
   cols: number;
@@ -13,9 +15,11 @@ export interface Tile {
 })
 export class AppComponent {
   title = 'test';
-  tiles: Tile[] = [
-    {text: 'One', cols: 1, rows: 3, color: 'lightblue'},
-    {text: 'Two', cols: 1, rows: 3, color: 'lightgreen'},
-    {text: 'Three', cols: 2, rows: 2, color: 'lightpink'}
-  ];
+  addItem(){
+    var allPrices = document.getElementById("priceList")
+    var allLocations = document.getElementById("locList")
+    var allDates = document.getElementById("billList")
+
+  }
+
 }

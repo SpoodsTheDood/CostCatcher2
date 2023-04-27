@@ -1,0 +1,32 @@
+
+<div class="modifierbuttons">
+  <button id="addbill" onclick="document.getElementById(newServHead).scrollIntoView()">Add New Bill</button>
+  <button id="removebill">Remove Bill</button>
+</div>
+<div class="row">
+    <div class="column left">Service Name
+      <ol>
+       <ng-container *ngFor="let name of currNames">
+          <li>{{name}}</li>
+       </ng-container>
+      </ol>
+    </div>
+    <div class="column middle">Price
+      <ol>
+        <ng-container *ngFor="let cost of currPrice">
+          <li>{{cost}}</li>
+        </ng-container>
+      </ol>
+      </div>
+    <div class="column right">Days Until Due
+      <ol>
+        <ng-container *ngFor="let due of currDaysTillDue">
+          <li>{{due}}</li>
+        </ng-container>
+      </ol>
+    </div>
+  </div>
+<br>
+<p></p>
+  
+
