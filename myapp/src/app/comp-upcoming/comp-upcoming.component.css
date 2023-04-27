@@ -4,6 +4,9 @@
     justify-content: space-between;
   }
 
+  .heading{
+    align-items: center;
+}
   mat-card{
     align-content: center;
     align-items: center;
