@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { CompListAllComponent } from '../comp-list-all/comp-list-all.component';
+import * as dayjs from 'dayjs';
+
 
 @Component({
   selector: 'app-comp-make-service',
@@ -14,6 +16,10 @@ newPayDay = "-1"
 finalDue = -2
 finalPrice = -2.22
 finalPayDay = -2
+
+getDayJSUntil(dayJsSelection:number){
+  
+}
 
 makeNewBill(inputDue:number, inputName:string, inputPrice:number, inputPayDay:number) {
   this.newDue=(<HTMLInputElement>document.getElementById("usrInpDue")).value
@@ -32,6 +38,9 @@ makeNewBill(inputDue:number, inputName:string, inputPrice:number, inputPayDay:nu
       switch(this.newPayDay){
         case "biwk":
           this.finalPayDay = 14
+          break
+        case "mnthDay":
+          
           break
         case "mnthSet":
           this.finalPayDay = 30

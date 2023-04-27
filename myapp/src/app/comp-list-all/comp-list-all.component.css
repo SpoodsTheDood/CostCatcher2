@@ -37,6 +37,10 @@ figcaption{
     font-size: 20pt;
   }
 
+  .heading{ 
+    color: #F4AF23;
+  }
+
 ul{
     align-content: center;
   justify-content: space-between;
