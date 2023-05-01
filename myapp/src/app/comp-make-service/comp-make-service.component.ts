@@ -1,27 +1,43 @@
+//alright im overwhelmed, i'm mkaing comments
 import { Component } from '@angular/core';
 import { CompListAllComponent } from '../comp-list-all/comp-list-all.component';
-import * as dayjs from 'dayjs';
-
+// ^ most variables are saves in list-all for the sole reason of myconvenience
 
 @Component({
   selector: 'app-comp-make-service',
   templateUrl: './comp-make-service.component.html',
   styleUrls: ['./comp-make-service.component.css']
 })
+
 export class CompMakeServiceComponent {
-  newDue = "-1"
+//these bad boys are for when you make a new service
+//will not be used outside of this component
+newDue = "-1"
 newName = "Default"
 newPrice = "-1.11"
 newPayDay = "-1"
+
+//probably dont need these
 finalDue = -2
 finalPrice = -2.22
 finalPayDay = -2
-validResults = true
-todaysDate = dayjs().date
 
-getDayJSUntil(dayJsSelection:number){
-  
-}
+//any error will return false and make it not go through
+//did this so i dont have 731 nested if statements
+validResults = true
+
+/*constructor(//come back to this
+  private conListAll: CompListAllComponent
+){}
+
+midnight = require('node-schedule') 
+changeDay = this.midnight.scheduleJob ('0 0 0 0 0', () => {
+  for (let i = 0; i < this.conListAll.currDaysTillDue.length; i++){
+    if (i = 1){
+
+    }
+  }
+})*/
 
 makeNewBill(inputDue:number, inputName:string, inputPrice:number, inputPayDay:number) {
   this.newDue=(<HTMLInputElement>document.getElementById("usrInpDue")).value

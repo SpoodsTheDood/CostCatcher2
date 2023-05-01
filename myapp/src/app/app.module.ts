@@ -8,8 +8,8 @@ import { MatCardModule} from '@angular/material/card';
 import { CompUpcomingComponent } from './comp-upcoming/comp-upcoming.component';
 import { CompListAllComponent } from './comp-list-all/comp-list-all.component';
 import { CompMakeServiceComponent } from './comp-make-service/comp-make-service.component';
+import { CompUserloginComponent } from './comp-userlogin/comp-userlogin.component';
 
-import * as dayjs from 'dayjs';
 //import { CardModule } from '@coreui/angular'
 
 //import { AnimationEvent } from '@angular/animations';
@@ -18,7 +18,8 @@ import * as dayjs from 'dayjs';
     AppComponent,
     CompUpcomingComponent,
     CompListAllComponent,
-    CompMakeServiceComponent
+    CompMakeServiceComponent,
+    CompUserloginComponent
   ],
   imports: [
     BrowserModule,
@@ -27,6 +28,6 @@ import * as dayjs from 'dayjs';
     MatCardModule
   ],
   providers: [],
-  bootstrap: [AppComponent, CompUpcomingComponent, CompListAllComponent]
+  bootstrap: [AppComponent, CompUpcomingComponent, CompListAllComponent, CompMakeServiceComponent]
 })
 export class AppModule { }
