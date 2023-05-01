@@ -16,6 +16,8 @@ newPayDay = "-1"
 finalDue = -2
 finalPrice = -2.22
 finalPayDay = -2
+validResults = true
+todaysDate = dayjs().date
 
 getDayJSUntil(dayJsSelection:number){
   
@@ -30,17 +32,16 @@ makeNewBill(inputDue:number, inputName:string, inputPrice:number, inputPayDay:nu
   //Dear god dont look at this part for any reason
   //If you want to look at this, consider calling your therapist afterwards
   if(isNaN(Number(this.newDue)) || Number(this.newDue)  % 1 != 0 || Number(this.newDue) < 1){
-      alert("ERROR! Your due date is invalid. Please use a whole number greater than or equal to 1")}
+      alert("ERROR! Your due date is invalid. Please use a whole number greater than or equal to 1")
+      this.validResults = false}
     else if (isNaN(Number(this.newPrice)) || Number(this.newPrice) < 1){
       alert("ERROR! Your cost is invalid. Please use a number greater than or equal to 1")
+      this.validResults = false
     }
     else{
       switch(this.newPayDay){
         case "biwk":
           this.finalPayDay = 14
-          break
-        case "mnthDay":
-          
           break
         case "mnthSet":
           this.finalPayDay = 30
@@ -50,8 +51,10 @@ makeNewBill(inputDue:number, inputName:string, inputPrice:number, inputPayDay:nu
           break
         default:
           alert("ERROR! The selected pay period is either invalid or coming soon! Please try a different period")
+          this.validResults = false
       }
     }
+    
   }
 }
 
