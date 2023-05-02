@@ -1,7 +1,7 @@
-//alright im overwhelmed, i'm mkaing comments
+//alright im overwhelmed, i'm making comments
 import { Component } from '@angular/core';
 import { CompListAllComponent } from '../comp-list-all/comp-list-all.component';
-// ^ most variables are saves in list-all for the sole reason of myconvenience
+// ^ most variables are saved in list-all for the sole reason of myconvenience
 
 @Component({
   selector: 'app-comp-make-service',
@@ -17,7 +17,7 @@ newName = "Default"
 newPrice = "-1.11"
 newPayDay = "-1"
 
-//probably dont need these
+//I can't remember why i made these but it breaks if i remove them
 finalDue = -2
 finalPrice = -2.22
 finalPayDay = -2
@@ -40,13 +40,13 @@ changeDay = this.midnight.scheduleJob ('0 0 0 0 0', () => {
 })*/
 
 makeNewBill(inputDue:number, inputName:string, inputPrice:number, inputPayDay:number) {
+  //Gets the info submitted by user
   this.newDue=(<HTMLInputElement>document.getElementById("usrInpDue")).value
   this.newName=(<HTMLInputElement>document.getElementById("usrInpName")).value
   this.newPrice=(<HTMLInputElement>document.getElementById("usrInpCost")).value
   this.newPayDay=(<HTMLInputElement>document.getElementById("billingPd")).value
 
-  //Dear god dont look at this part for any reason
-  //If you want to look at this, consider calling your therapist afterwards
+  //Dear god dont look at this part yet
   if(isNaN(Number(this.newDue)) || Number(this.newDue)  % 1 != 0 || Number(this.newDue) < 1){
       alert("ERROR! Your due date is invalid. Please use a whole number greater than or equal to 1")
       this.validResults = false}
@@ -55,6 +55,7 @@ makeNewBill(inputDue:number, inputName:string, inputPrice:number, inputPayDay:nu
       this.validResults = false
     }
     else{
+      //changes the pay period based on what the user decided
       switch(this.newPayDay){
         case "biwk":
           this.finalPayDay = 14

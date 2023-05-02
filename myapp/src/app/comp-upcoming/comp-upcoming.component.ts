@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./comp-upcoming.component.css']
 })
 export class CompUpcomingComponent {
-
+//this will be the card that appear for the bills with the closest due dates
 }

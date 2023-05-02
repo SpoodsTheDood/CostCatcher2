@@ -7,11 +7,12 @@ import { HttpClient } from '@angular/common/http'
   styleUrls: ['./comp-userlogin.component.css']
 })
 export class CompUserloginComponent {
+  //user login
   constructor (private httpClient:HttpClient){}
 login(){
-  var username = document.getElementById("username")
-  var password = document.getElementById("password")
-  this.httpClient.get("localhost:3000").subscribe( res =>{
+  var username:any = document.getElementById("username")
+  var password:any = document.getElementById("password")
+  this.httpClient.get("http://localhost:3000/users/644947e06853dc3d8bdd603c").subscribe( res =>{
       
   })
 }
