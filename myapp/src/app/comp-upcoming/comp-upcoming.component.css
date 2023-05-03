@@ -1,12 +1,13 @@
+*{
+  margin: auto;
+  text-align: center;
+}
 
 .cards {
     display: flex;
     justify-content: space-between;
   }
 
-  .heading{
-    align-items: center;
-}
   mat-card{
     align-content: center;
     align-items: center;
@@ -35,5 +36,6 @@
   }
   .heading{
     font-size: 100pt;
-    color:#3C1053
+    color:#3C1053;
+    padding-bottom: 5pt;
   }

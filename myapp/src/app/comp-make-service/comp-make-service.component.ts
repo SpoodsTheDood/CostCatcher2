@@ -20,7 +20,7 @@ newPayDay = "-1"
 //I can't remember why i made these but it breaks if i remove them
 finalDue = -2
 finalPrice = -2.22
-finalPayDay = -2
+finalPayDay:number = -2 as number
 
 //any error will return false and make it not go through
 //did this so i dont have 731 nested if statements
@@ -39,6 +39,25 @@ changeDay = this.midnight.scheduleJob ('0 0 0 0 0', () => {
   }
 })*/
 
+pickDate(oldDay:String){
+  var newday = 0
+      //changes the pay period based on what the user decided
+      switch(oldDay){
+        case "biwk":
+          newday = 14
+          break
+        case "mnthSet":
+          newday = 30
+          break
+        case "yrlySet":
+          newday = 365
+          break
+          default:
+            newday = 0
+            break
+    return(newday)
+}
+}
 makeNewBill(inputDue:number, inputName:string, inputPrice:number, inputPayDay:number) {
   //Gets the info submitted by user
   this.newDue=(<HTMLInputElement>document.getElementById("usrInpDue")).value
@@ -55,21 +74,7 @@ makeNewBill(inputDue:number, inputName:string, inputPrice:number, inputPayDay:nu
       this.validResults = false
     }
     else{
-      //changes the pay period based on what the user decided
-      switch(this.newPayDay){
-        case "biwk":
-          this.finalPayDay = 14
-          break
-        case "mnthSet":
-          this.finalPayDay = 30
-          break
-        case "yrlySet":
-          this.finalPayDay = 365
-          break
-        default:
-          alert("ERROR! The selected pay period is either invalid or coming soon! Please try a different period")
-          this.validResults = false
-      }
+      this.finalPayDay =this.pickDate(this.newPayDay)
     }
     
   }
