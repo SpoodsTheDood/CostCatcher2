@@ -20,7 +20,7 @@ newPayDay = "-1"
 //I can't remember why i made these but it breaks if i remove them
 finalDue = -2
 finalPrice = -2.22
-finalPayDay:number = -2 as number
+finalPayDay?:number = -2 as number
 
 //any error will return false and make it not go through
 //did this so i dont have 731 nested if statements

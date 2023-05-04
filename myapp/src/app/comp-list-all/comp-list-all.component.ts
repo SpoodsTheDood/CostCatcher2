@@ -27,10 +27,13 @@ presNames =  ["Netflix - Basic Ad Free", "Netflix - Basic w/ Ads", "Netflix - St
 presDaysTillDue = ["MON", "MON", "MON", "MON", "MON", "MON"]
 presPrice = [9.99, 6.99, 15.49,
               19.99, 7.99, 10.99] 
-constructor(//come back to this
+
+constructor(
   private conListAll: CompListAllComponent
 ){}
 
+//lowers the day counter every midnight
+//Struggling with this guy, I can't get it to recognize the "require" keyword
 midnight = require('node-schedule') 
 changeDay = this.midnight.scheduleJob ('0 0 0 0 0', () => {
   for (let i = 0; i < this.conListAll.currDaysTillDue.length; i++){
