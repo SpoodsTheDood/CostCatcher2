@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 //to pass values back and forth
 import { CompMakeServiceComponent } from '../comp-make-service/comp-make-service.component';
 
@@ -9,6 +10,13 @@ import { CompMakeServiceComponent } from '../comp-make-service/comp-make-service
 })
 export class CompListAllComponent {
 
+  url = 'http://localhost:3000/services/64494896c7234c797a7e1fa3'
+  constructor(private httpClient:HttpClient){}
+
+    getHeapCodeStatistics(){
+      return this.httpClient.get(this.url)
+    }
+
 newDue = -1
 newName = "Default"
 newPrice = -1.11
@@ -16,44 +24,24 @@ newMonthly = false
 newPayDay = -1
 
 //These are the ones that will show up inside the lists
-currNames= ["Netflix - Premium", "Disney+ - Ad Free"]
-currDaysTillDue = [31, 25]
-currPayDays = [31, 31]
-currPrice = [19.99, 10.99]
+currNames:JSON[]= []
+currDaysTillDue:JSON[] = []
+currPayDays:JSON[] = []
+currPrice:JSON[] = []
 
-//will probably be unused, user can input custom bills
-presNames =  ["Netflix - Basic Ad Free", "Netflix - Basic w/ Ads", "Netflix - Standard",
-              "Netflix - Premium", "Disney+ w/ Ads", "Disney+ - Ad Free"]
-presDaysTillDue = ["MON", "MON", "MON", "MON", "MON", "MON"]
-presPrice = [9.99, 6.99, 15.49,
-              19.99, 7.99, 10.99] 
 
-              /*constructor(
-                private conListAll: CompListAllComponent
-              ){}
-              
-              //lowers the day counter every midnight
-              //Struggling with this guy, I can't get it to recognize the "require" keyword
-              midnight = require('node-schedule') 
-              changeDay = this.midnight.scheduleJob ('0 0 0 0 0', () => {
-                for (let i = 0; i < this.conListAll.currDaysTillDue.length; i++){
-                  if (i = 1){
-                    
-                  }
-                  else{
-                    this.conListAll.currDaysTillDue[i] -= 1
-                  }
-              
-                }
-              })
+/*async fetchData() {
 
-              //I have no idea what I made these for
-              addItem(){
+  const response = await fetch(this.url);
+  const data = await response.json();
 
-              }
-
-              removeItem(){
-                
-              }*/
+  data.forEach(obj => {
+      Object.entries(obj).forEach(([key, value]) => {
+          console.log(`${key} ${value}`);
+      });
+      console.log('-------------------');
+  });
+}
+*/
 
 }

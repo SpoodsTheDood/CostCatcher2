@@ -1,5 +1,6 @@
 //alright im overwhelmed, i'm making comments
 import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { CompListAllComponent } from '../comp-list-all/comp-list-all.component';
 // ^ most variables are saved in list-all for the sole reason of myconvenience
 
@@ -12,6 +13,13 @@ import { CompListAllComponent } from '../comp-list-all/comp-list-all.component';
 export class CompMakeServiceComponent {
 //these bad boys are for when you make a new service
 //will not be used outside of this component
+
+url = 'http://localhost:3000/services/64494896c7234c797a7e1fa3'
+    constructor(private httpClient:HttpClient){}
+
+      getHeapCodeStatistics(){
+        return this.httpClient.get(this.url)
+      }
 newDue = "-1"
 newName = "Default"
 newPrice = "-1.11"
@@ -58,7 +66,7 @@ pickDate(oldDay:String){
 }
 return(newday)
 }
-makeNewBill(inputDue:number, inputName:string, inputPrice:number, inputPayDay:number) {
+makeNewBill() {
   //Gets the info submitted by user
   this.newDue=(<HTMLInputElement>document.getElementById("usrInpDue")).value
   this.newName=(<HTMLInputElement>document.getElementById("usrInpName")).value
@@ -74,10 +82,25 @@ makeNewBill(inputDue:number, inputName:string, inputPrice:number, inputPayDay:nu
       this.validResults = false
     }
     else{
+      this.validResults = true
       this.finalPayDay =this.pickDate(this.newPayDay)
+      console.log('Date Successful')
+      console.log(this.finalPayDay)
     }
+
     
-  }
-}
+    if(this.validResults = true){
+      this.httpClient.post(this.url, JSON.stringify({
+        "service": `${this.newName}`,
+        "price": `${this.newPrice}`}))
+      console.log('Upload success')
+        
+
+        }
+
+      }
+    }
+  
+
 
 

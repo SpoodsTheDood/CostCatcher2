@@ -1,7 +1,8 @@
 {
   "dependencies": {
     "@coreui/angular": "^4.4.1",
-    "node-schedule": "^2.1.1"
+    "node-schedule": "^2.1.1",
+    "typescript": "^5.0.4"
   },
   "devDependencies": {
     "@types/node": "^18.16.3"

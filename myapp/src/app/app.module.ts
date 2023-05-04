@@ -10,6 +10,8 @@ import { CompListAllComponent } from './comp-list-all/comp-list-all.component';
 import { CompMakeServiceComponent } from './comp-make-service/comp-make-service.component';
 import { CompUserloginComponent } from './comp-userlogin/comp-userlogin.component';
 
+import { HttpClientModule } from '@angular/common/http';
+
 //import { CardModule } from '@coreui/angular'
 
 //import { AnimationEvent } from '@angular/animations';
@@ -24,6 +26,7 @@ import { CompUserloginComponent } from './comp-userlogin/comp-userlogin.componen
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     MatGridListModule,
     MatCardModule
   ],
