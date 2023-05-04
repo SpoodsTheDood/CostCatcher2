@@ -55,8 +55,8 @@ pickDate(oldDay:String){
           default:
             newday = 0
             break
-    return(newday)
 }
+return(newday)
 }
 makeNewBill(inputDue:number, inputName:string, inputPrice:number, inputPayDay:number) {
   //Gets the info submitted by user

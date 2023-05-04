@@ -28,24 +28,24 @@ presDaysTillDue = ["MON", "MON", "MON", "MON", "MON", "MON"]
 presPrice = [9.99, 6.99, 15.49,
               19.99, 7.99, 10.99] 
 
-constructor(
-  private conListAll: CompListAllComponent
-){}
-
-//lowers the day counter every midnight
-//Struggling with this guy, I can't get it to recognize the "require" keyword
-midnight = require('node-schedule') 
-changeDay = this.midnight.scheduleJob ('0 0 0 0 0', () => {
-  for (let i = 0; i < this.conListAll.currDaysTillDue.length; i++){
-    if (i = 1){
-      
-    }
-    else{
-      this.conListAll.currDaysTillDue[i] -= 1
-    }
-
-  }
-})
+              /*constructor(
+                private conListAll: CompListAllComponent
+              ){}
+              
+              //lowers the day counter every midnight
+              //Struggling with this guy, I can't get it to recognize the "require" keyword
+              midnight = require('node-schedule') 
+              changeDay = this.midnight.scheduleJob ('0 0 0 0 0', () => {
+                for (let i = 0; i < this.conListAll.currDaysTillDue.length; i++){
+                  if (i = 1){
+                    
+                  }
+                  else{
+                    this.conListAll.currDaysTillDue[i] -= 1
+                  }
+              
+                }
+              })
 
               //I have no idea what I made these for
               addItem(){
@@ -54,6 +54,6 @@ changeDay = this.midnight.scheduleJob ('0 0 0 0 0', () => {
 
               removeItem(){
                 
-              }
+              }*/
 
 }
