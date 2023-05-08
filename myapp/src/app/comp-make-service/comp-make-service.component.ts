@@ -1,5 +1,5 @@
 //alright im overwhelmed, i'm making comments
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { CompListAllComponent } from '../comp-list-all/comp-list-all.component';
 // ^ most variables are saved in list-all for the sole reason of myconvenience
@@ -16,7 +16,8 @@ export class CompMakeServiceComponent {
 //will not be used outside of this component
 
 url = 'http://localhost:3000/services/64494896c7234c797a7e1fa3'
-    constructor(private httpClient:HttpClient){}
+    constructor(private httpClient:HttpClient,
+      serviceTest: ServTestService){}
 
       getHeapCodeStatistics(){
         return this.httpClient.get(this.url)

@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 //to pass values back and forth
 import { CompMakeServiceComponent } from '../comp-make-service/comp-make-service.component';
+import { ServTestService } from '../serv-test.service';
+import { Bills } from '../Bills';
 
 @Component({
   selector: 'app-comp-list-all',
@@ -11,7 +13,8 @@ import { CompMakeServiceComponent } from '../comp-make-service/comp-make-service
 export class CompListAllComponent {
 
   url = 'http://localhost:3000/services/64494896c7234c797a7e1fa3'
-  constructor(private httpClient:HttpClient){}
+  constructor(private httpClient:HttpClient,
+    servTestServer:ServTestService){}
 
     getHeapCodeStatistics(){
       return this.httpClient.get(this.url)
@@ -24,7 +27,7 @@ newMonthly = false
 newPayDay = -1
 
 //These are the ones that will show up inside the lists
-currNames:JSON[]= []
+currNames:JSON[] = []
 currDaysTillDue:JSON[] = []
 currPayDays:JSON[] = []
 currPrice:JSON[] = []
