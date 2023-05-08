@@ -32,6 +32,7 @@ currPrice:JSON[] = []
 loadServices(){
   console.log('Beginning load')
   this.httpClient.get(this.url)
+  
 }
 
 /*async fetchData() {

@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { CompListAllComponent } from '../comp-list-all/comp-list-all.component';
 // ^ most variables are saved in list-all for the sole reason of myconvenience
+import { ServTestService } from '../serv-test.service';
 
 @Component({
   selector: 'app-comp-make-service',
@@ -66,6 +67,12 @@ pickDate(oldDay:String){
 }
 return(newday)
 }
+
+listServices(listedItem:JSON, oldList:JSON[]){
+var newList = oldList.push(listedItem)
+return newList
+}
+
 makeNewBill() {
   //Gets the info submitted by user
   this.newDue=(<HTMLInputElement>document.getElementById("usrInpDue")).value
@@ -98,6 +105,9 @@ makeNewBill() {
 
         }
 
+      }
+      deleteBill(){
+        
       }
     }
   
