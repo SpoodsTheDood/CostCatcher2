@@ -10,7 +10,9 @@ import { Bills } from './Bills';
 })
 export class ServTestService {
 
-  
+  /*getServices(): Bills[] {
+    return 
+  }*/
 
   constructor() { }
 
@@ -18,5 +20,7 @@ export class ServTestService {
   listAllDaysTillDue:JSON[] = []
   listAllPrices: JSON[] = []
   currPayDays: JSON[] = []
+
+
 
 }
