@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ServTestService } from './servtest.service';
 
 
 export interface Tile {
@@ -14,6 +15,8 @@ export interface Tile {
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  
+  json: any
   title = 'test';
   addItem(){
     var allPrices = document.getElementById("priceList")
@@ -21,5 +24,11 @@ export class AppComponent {
     var allDates = document.getElementById("billList")
 
   }
-
+ constructor(private servtest: ServTestService){}
+    ngOnInit(){
+      this.servtest.getPosts()
+      .subscribe(response => {
+        this.json = response
+      })
+    }
 }

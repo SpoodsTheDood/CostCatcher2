@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-comp-upcoming',
@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./comp-upcoming.component.css']
 })
 export class CompUpcomingComponent {
-
+//this will be the card that appear for the bills with the closest due dates
 }

@@ -1,12 +1,8 @@
 
-<div class="modifierbuttons">
-  <button id="addbill" onclick="document.getElementById(newServHead).scrollIntoView()">Add New Bill</button>
-  <button id="removebill">Remove Bill</button>
-</div>
 <div class="row">
     <div class="column left">Service Name
       <ol>
-       <ng-container *ngFor="let name of currNames">
+       <ng-container *ngFor="let name of json">
           <li>{{name}}</li>
        </ng-container>
       </ol>
