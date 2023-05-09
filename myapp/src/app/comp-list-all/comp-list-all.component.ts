@@ -13,25 +13,18 @@ import { BILLS } from '../mockBills';
 })
 export class CompListAllComponent {
 
+
   Bills = BILLS;
 
-  url = 'http://localhost:3000/services/64494896c7234c797a7e1fa3'
-  constructor(private httpClient:HttpClient, servTestService:ServTestService){}
-  
-json: JSON[] = []
+  json: any
 
-
-
+  constructor(private servTestService: ServTestService) {}
 
    ngOnInit(){
       this.servTestService.getPosts()
       .subscribe(response => {
         this.json = response
       })
-    }
- 
-    getHeapCodeStatistics(){
-      return this.httpClient.get(this.url)
     }
 
 newDue = -1
@@ -46,11 +39,7 @@ currDaysTillDue:JSON[] = []
 currPayDays:JSON[] = []
 currPrice:JSON[] = []
 
-loadServices(){
-  console.log('Beginning load')
-  this.httpClient.get(this.url)
-  
-}
+
 
 
 
