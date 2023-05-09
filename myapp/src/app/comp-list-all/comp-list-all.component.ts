@@ -2,8 +2,9 @@ import { Component, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 //to pass values back and forth
 import { CompMakeServiceComponent } from '../comp-make-service/comp-make-service.component';
-import { ServTestService } from '../serv-test.service';
+import { ServTestService } from '../servtest.service';
 import { Bills } from '../Bills';
+import { BILLS } from '../mockBills';
 
 @Component({
   selector: 'app-comp-list-all',
@@ -12,10 +13,23 @@ import { Bills } from '../Bills';
 })
 export class CompListAllComponent {
 
-  url = 'http://localhost:3000/services/64494896c7234c797a7e1fa3'
-  constructor(private httpClient:HttpClient,
-    servTestServer:ServTestService){}
+  Bills = BILLS;
 
+  url = 'http://localhost:3000/services/64494896c7234c797a7e1fa3'
+  constructor(private httpClient:HttpClient, servTestService:ServTestService){}
+  
+json: JSON[] = []
+
+
+
+
+   ngOnInit(){
+      this.servTestService.getPosts()
+      .subscribe(response => {
+        this.json = response
+      })
+    }
+ 
     getHeapCodeStatistics(){
       return this.httpClient.get(this.url)
     }
@@ -37,6 +51,8 @@ loadServices(){
   this.httpClient.get(this.url)
   
 }
+
+
 
 /*async fetchData() {
 

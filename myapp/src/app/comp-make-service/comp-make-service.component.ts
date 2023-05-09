@@ -3,7 +3,7 @@ import { Component, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { CompListAllComponent } from '../comp-list-all/comp-list-all.component';
 // ^ most variables are saved in list-all for the sole reason of myconvenience
-import { ServTestService } from '../serv-test.service';
+import { ServTestService } from '../servtest.service';
 
 @Component({
   selector: 'app-comp-make-service',

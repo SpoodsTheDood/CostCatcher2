@@ -1,6 +1,6 @@
 export interface Bills {
-    billsName: JSON
-    billsDaysTillDue: JSON
-    billsDueDate: JSON
-    billsPrice: JSON
+    billsName: string
+    billsDaysTillDue: number
+    billsDueDate: string
+    billsPrice: number
 }

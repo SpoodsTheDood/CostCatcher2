@@ -11,6 +11,7 @@ import { CompMakeServiceComponent } from './comp-make-service/comp-make-service.
 import { CompUserloginComponent } from './comp-userlogin/comp-userlogin.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { ServTestService } from './servtest.service';
 
 //import { CardModule } from '@coreui/angular'
 
@@ -31,6 +32,6 @@ import { HttpClientModule } from '@angular/common/http';
     MatCardModule
   ],
   providers: [],
-  bootstrap: [AppComponent, CompUpcomingComponent, CompListAllComponent, CompMakeServiceComponent]
+  bootstrap: [AppComponent, CompUpcomingComponent, CompListAllComponent, CompMakeServiceComponent,ServTestService]
 })
 export class AppModule { }
