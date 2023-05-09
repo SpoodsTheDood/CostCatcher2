@@ -22,14 +22,14 @@ json: JSON[] = []
 
 
 
-
+/*
    ngOnInit(){
       this.servTestService.getPosts()
       .subscribe(response => {
         this.json = response
       })
     }
- 
+*/ 
     getHeapCodeStatistics(){
       return this.httpClient.get(this.url)
     }
