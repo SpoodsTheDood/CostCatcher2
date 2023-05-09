@@ -12,8 +12,7 @@ export class CompUserloginComponent {
 login(){
   var username:any = document.getElementById("username")
   var password:any = document.getElementById("password")
-  this.httpClient.get("http://localhost:3000/users/644947e06853dc3d8bdd603c").subscribe( res =>{
-      
-  })
+//  this.httpClient.get("http://localhost:3000/users/644947e06853dc3d8bdd603c").subscribe( res =>{
+//  })
 }
 }

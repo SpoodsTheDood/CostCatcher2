@@ -3,8 +3,6 @@ import { HttpClient } from '@angular/common/http';
 //to pass values back and forth
 import { CompMakeServiceComponent } from '../comp-make-service/comp-make-service.component';
 import { ServTestService } from '../servtest.service';
-import { Bills } from '../Bills';
-import { BILLS } from '../mockBills';
 
 @Component({
   selector: 'app-comp-list-all',
@@ -13,7 +11,6 @@ import { BILLS } from '../mockBills';
 })
 export class CompListAllComponent {
 
-  Bills = BILLS;
 
   url = 'http://localhost:3000/services/64494896c7234c797a7e1fa3'
   constructor(private httpClient:HttpClient, servTestService:ServTestService){}

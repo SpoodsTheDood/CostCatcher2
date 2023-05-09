@@ -3,7 +3,6 @@ import { CompMakeServiceComponent } from './comp-make-service/comp-make-service.
 import { CompListAllComponent } from './comp-list-all/comp-list-all.component';
 import { CompUpcomingComponent } from './comp-upcoming/comp-upcoming.component';
 import { CompUserloginComponent } from './comp-userlogin/comp-userlogin.component';
-import { Bills } from './Bills';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
