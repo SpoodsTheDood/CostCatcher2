@@ -10,7 +10,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class ServTestService {
-  private url = 'http://localhost:3000/services'
+  private url = 'http://localhost:3000/services/user/6464166c8b453069b9564425'
 
   constructor(private httpClient:HttpClient) {  }
 

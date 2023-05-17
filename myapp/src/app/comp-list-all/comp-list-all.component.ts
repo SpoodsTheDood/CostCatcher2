@@ -10,15 +10,9 @@ import { ServTestService } from '../servtest.service';
   styleUrls: ['./comp-list-all.component.css']
 })
 export class CompListAllComponent {
-
-
-  url = 'http://localhost:3000/services/64494896c7234c797a7e1fa3'
-  constructor(private httpClient:HttpClient, servTestService:ServTestService){}
+  constructor(private servTestService:ServTestService){}
   
-
-
-
-/*
+json: any
 
    ngOnInit(){
       this.servTestService.getPosts()
@@ -27,10 +21,8 @@ export class CompListAllComponent {
       })
     }
     
-*/ 
-    getHeapCodeStatistics(){
-      return this.httpClient.get(this.url)
-    }
+
+
 
 newDue = -1
 newName = "Default"
