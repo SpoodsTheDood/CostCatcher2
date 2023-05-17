@@ -11,20 +11,26 @@ import { ServTestService } from '../servtest.service';
 })
 export class CompListAllComponent {
 
+
   url = 'http://localhost:3000/services/64494896c7234c797a7e1fa3'
   constructor(private httpClient:HttpClient, servTestService:ServTestService){}
   
 json: JSON[] = []
 
+  Bills = BILLS;
+
+  json: any
 
 
 /*
+
    ngOnInit(){
       this.servTestService.getPosts()
       .subscribe(response => {
         this.json = response
       })
     }
+    
 */ 
     getHeapCodeStatistics(){
       return this.httpClient.get(this.url)
@@ -37,6 +43,7 @@ newMonthly = false
 newPayDay = -1
 
 //These are the ones that will show up inside the lists
+
 jsNames:JSON[] = []
 jsDaysTillDue:JSON[] = []
 jsPayDays:JSON[] = []
@@ -62,6 +69,14 @@ sortServices(){
 }
   
 }
+
+currNames:JSON[] = []
+currDaysTillDue:JSON[] = []
+currPayDays:JSON[] = []
+currPrice:JSON[] = []
+
+
+
 
 
 /*async fetchData() {
