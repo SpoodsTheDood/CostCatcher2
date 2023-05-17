@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { CompListAllComponent } from '../comp-list-all/comp-list-all.component';
 // ^ most variables are saved in list-all for the sole reason of myconvenience
 import { ServTestService } from '../servtest.service';
+import * as moment from 'moment'
 
 @Component({
   selector: 'app-comp-make-service',
@@ -27,6 +28,10 @@ newName = "Default"
 newPrice = "-1.11"
 newPayDay = "-1"
 
+fullCreationDate = moment().format('D/MM/YYYY')
+monthOfCreation:number = Number(this.fullCreationDate.substring(-7, 2))
+dayOfCreation:number = Number(this.fullCreationDate.substring(0, this.fullCreationDate.indexOf('/')))
+
 //I can't remember why i made these but it breaks if i remove them
 finalDue = -2
 finalPrice = -2.22
@@ -49,6 +54,13 @@ changeDay = this.midnight.scheduleJob ('0 0 0 0 0', () => {
   }
 })*/
 
+getSpecificDay(month:number){
+const monthsWith30 = [4, 6, 9, 11]
+if (month = 2){return (28)}
+if (month in monthsWith30){return (30)}
+return 31
+}
+
 pickDate(oldDay:String){
   var newday = 0
       //changes the pay period based on what the user decided
@@ -62,10 +74,14 @@ pickDate(oldDay:String){
         case "yrlySet":
           newday = 365
           break
+        case "mnthDate":
+          //newday = this.getSpecificDay()
+          break
           default:
             newday = 0
             break
 }
+
 return(newday)
 }
 

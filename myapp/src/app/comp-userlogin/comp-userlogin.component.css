@@ -1,3 +1,26 @@
 *{
     float: right;
 }
+
+button{
+    text-align: center;
+    color:#D7A9E3;
+    background-color: #3C1053;
+    padding: 1%;
+    border:#F4AF23;
+    border-style: groove;
+    font-size: 250%;
+  }
+
+
+  input{
+    border:#F4AF23;
+    border-style: double;
+    background-color: #3C1053;
+    color: #D7A9E3;
+    width: 15%;
+    font-size: 200%;
+    margin: auto;
+    padding: 1%;
+    display: block;
+}
