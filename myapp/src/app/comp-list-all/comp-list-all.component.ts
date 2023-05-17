@@ -47,7 +47,7 @@ currPayDays:String[] = ["MON", "BIWK", "MON", "WKLY"]
 currPrice:Number[] = [1.11, 2.22, 3.33, 4.44]
 
 
-loadServices(){
+sortServices(){
   var mashup = []
   for (var j = 0; j < this.currNames.length; j++){
     mashup.push({'name': this.currNames[j], 'dueIn': this.currDaysTillDue[j], 'price':this.currPrice[j]})
@@ -77,5 +77,6 @@ loadServices(){
   });
 }
 */
+
 
 }

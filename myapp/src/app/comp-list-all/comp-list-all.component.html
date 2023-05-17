@@ -15,6 +15,7 @@
       </ol>
       </div>
     <div class="column right">Days Until Due
+      <button onclick="sortServices()">Sort by due date</button>
       <ol>
         <ng-container *ngFor="let due of currDaysTillDue">
           <li>{{due}}</li>
@@ -25,4 +26,6 @@
 <br>
 <p></p>
   
+
+
 
