@@ -15,11 +15,7 @@ export class CompListAllComponent {
   url = 'http://localhost:3000/services/64494896c7234c797a7e1fa3'
   constructor(private httpClient:HttpClient, servTestService:ServTestService){}
   
-json: JSON[] = []
 
-  Bills = BILLS;
-
-  json: any
 
 
 /*
@@ -70,10 +66,6 @@ sortServices(){
   
 }
 
-currNames:JSON[] = []
-currDaysTillDue:JSON[] = []
-currPayDays:JSON[] = []
-currPrice:JSON[] = []
 
 
 
