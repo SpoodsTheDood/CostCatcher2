@@ -54,6 +54,14 @@ changeDay = this.midnight.scheduleJob ('0 0 0 0 0', () => {
   }
 })*/
 
+setMonthNum(month:String){
+  if (month = 'Feb') {return 28}
+  else if (month in ['Apr', 'Jun', 'Sep', 'Nov']) {return 30}
+  else {return 31}
+}
+
+
+//redundant function as of now, keeping just in case
 getSpecificDay(month:number){
 const monthsWith30 = [4, 6, 9, 11]
 if (month = 2){return (28)}
@@ -62,7 +70,8 @@ return 31
 }
 
 pickDate(oldDay:String){
-  var newday = 0
+  var newday = -1
+  console.log("DPP")
       //changes the pay period based on what the user decided
       switch(oldDay){
         case "biwk":
@@ -75,13 +84,15 @@ pickDate(oldDay:String){
           newday = 365
           break
         case "mnthDate":
-          //newday = this.getSpecificDay()
+        console.log("Calling setMonthNum...")
+        newday = this.setMonthNum(moment().format('MMM'))
+        console.log("Function Success")
           break
           default:
-            newday = 0
+            newday = 1
             break
 }
-
+console.log(newday)
 return(newday)
 }
 
