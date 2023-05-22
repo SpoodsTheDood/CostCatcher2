@@ -14,7 +14,6 @@
       </ol>
       </div>
     <div class="column right">Days Until Due
-      <button onclick="sortByProperty()">Sort by due date</button>
       <ol>
         <ng-container *ngFor="let due of json">
           <li>{{due.dueDate | date: 'mediumDate'}}</li>
