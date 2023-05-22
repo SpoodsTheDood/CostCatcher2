@@ -9,15 +9,15 @@
     <div class="column middle">Price
       <ol>
         <ng-container *ngFor="let cost of json">
-          <li>{{cost.price}}</li>
+          <li>${{cost.price}}</li>
         </ng-container>
       </ol>
       </div>
     <div class="column right">Days Until Due
-      <button onclick="sortServices()">Sort by due date</button>
+      <button onclick="sortByProperty()">Sort by due date</button>
       <ol>
         <ng-container *ngFor="let due of json">
-          <li>{{due.dueDate}}</li>
+          <li>{{due.dueDate | date: 'mediumDate'}}</li>
         </ng-container>
       </ol>
     </div>
