@@ -1,18 +1,21 @@
 <div class="heading">
-Coming Up
+  Coming Up
 </div>
 <div id="cards">
-    <div class="row">
-    <mat-card>
-      <mat-card-header>Test Head 1</mat-card-header>
-      <mat-card-title>Test Title 1</mat-card-title>
-      <mat-card-subtitle> Test Sub 1</mat-card-subtitle>
-      <mat-card-content>Test Content 1</mat-card-content>
-      <mat-card-footer>Test Footer 1</mat-card-footer>
-      <mat-card-actions>
-          <button>Test Button</button>
-      </mat-card-actions>
-  </mat-card>
-</div>
+  <div class="row">
+    <mat-grid-list cols="2">
+      <mat-grid-tile *ngFor="let i of json.slice(0,2)">
+        <mat-card>
+          <mat-card-header>{{i.service}}</mat-card-header>
+          <!--<mat-card-title>Test Title 1</mat-card-title>-->
+          <!--<mat-card-subtitle> {{i.service}}</mat-card-subtitle>-->
+          <mat-card-content>{{i.price | currency: "USD"}}</mat-card-content>
+          <mat-card-footer>{{i.dueDate | date: 'MMMM d'}}</mat-card-footer>
+          <mat-card-actions>
+            <button>Test Button</button>
+          </mat-card-actions>
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
   </div>
- 
+</div>
