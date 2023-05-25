@@ -12,6 +12,8 @@ import { CompUserloginComponent } from './comp-userlogin/comp-userlogin.componen
 
 import { HttpClientModule } from '@angular/common/http';
 import { ServTestService } from './servtest.service';
+import { CompDelServiceComponent } from './comp-del-service/comp-del-service.component';
+import { CompChangeServiceComponent } from './comp-change-service/comp-change-service.component';
 
 //import { CardModule } from '@coreui/angular'
 
@@ -22,7 +24,9 @@ import { ServTestService } from './servtest.service';
     CompUpcomingComponent,
     CompListAllComponent,
     CompMakeServiceComponent,
-    CompUserloginComponent
+    CompUserloginComponent,
+    CompDelServiceComponent,
+    CompChangeServiceComponent
   ],
   imports: [
     BrowserModule,

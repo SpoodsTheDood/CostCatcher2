@@ -11,20 +11,19 @@
   mat-card{
     align-content: center;
     align-items: center;
-    background-color: #235ef4;
-    border-color: #4AC9E3;
+    background-color: #3C1053;
+    border-color: #F4AF23;
     border-style:double;
     border-width: 5pt;
     width: 30%;
   }
   mat-card-header{
     font-size: 50pt;
-    color: #3C1053;
+    color: #D7A9E3;
   }
   mat-card-title{
-    font-size: 100pt;
+    font-size: 50pt;
     background-color: #3C1053;
-    width: 90%;
     align-items:center;
     color: #4AC9E3;
   }
@@ -35,7 +34,10 @@
     color: #D7A9E3;
   }
   .heading{
-    font-size: 100pt;
+    font-size: 60pt;
     color:#3C1053;
     padding-bottom: 5pt;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
