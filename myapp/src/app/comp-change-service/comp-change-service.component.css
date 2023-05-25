@@ -1,0 +1,23 @@
+li{
+    display: inline;
+    background-color: #3C1053;
+    color: #D7A9E3;
+    border-color: #F4AF23;
+    font-size: 25px;
+    float: left;
+    width: 25%;
+  }
+  
+  li a {
+    display: block;
+    text-align: center;
+    padding: 14px ;
+    text-decoration: none;
+  }
+  
+  li a:hover{
+    background-color: #F4AF23;
+  }
+  li a:visited{
+    color: #4AC9E3
+  }

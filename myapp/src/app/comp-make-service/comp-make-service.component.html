@@ -1,4 +1,12 @@
 <h1 id="NewServHead">Add a New Service</h1>
+<div class="navbar">
+    <ul>
+      <li><a routerLink="/">Show All</a></li>
+      <li><a routerLink="/add">Create New</a></li>
+      <li><a routerLink="/transpose">Modify Existing</a></li>
+      <li><a routerLink="/subtract">Delete Old</a></li>
+    </ul>
+    </div>
 <input type="text" id="usrInpDue" name="usrInpDue"><p>How Many Days from Today Until Due?</p> <br>
 <input type="text" id="usrInpName" name="usrInpName"><p>What is the Service's Name?</p> <br>
 <input type="text" id="usrInpCost" name="usrInpCost"><p>What Does the Service Cost per Billing Period?</p> <br>
@@ -11,7 +19,6 @@
     <option value="biwk">Every 14 Days</option>
 </select> <p>What is the Billing Period?</p> <br>
 <button (click)="makeNewBill()">Create Service</button>
-<button (click)="deleteBill()">Delete Service</button>
 <!--<ng-container *ngIf="show" ngFor="let name of currNames">
     <option value="{{name}}">{{name}}</option>
 </ng-container>-->

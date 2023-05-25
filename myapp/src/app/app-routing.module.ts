@@ -8,8 +8,8 @@ import { CompChangeServiceComponent } from './comp-change-service/comp-change-se
 const routes: Routes = [
   { path: '', component:AppComponent },
   { path: 'add', component:CompMakeServiceComponent},
-  { path: 'subtract', component:CompDelServiceComponent},
-  { path: 'transpose', component:CompChangeServiceComponent}
+  { path: 'transpose', component:CompChangeServiceComponent},
+  { path: 'subtract', component:CompDelServiceComponent}
 ];
 
 @NgModule({
