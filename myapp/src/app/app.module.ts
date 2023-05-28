@@ -19,6 +19,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatDateRangePicker, MatDatepickerModule } from '@angular/material/datepicker';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 //import { CardModule } from '@coreui/angular'
 
@@ -43,7 +44,8 @@ import { MatDateRangePicker, MatDatepickerModule } from '@angular/material/datep
     MatNativeDateModule,
     MatFormFieldModule,
     MatInputModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent, CompUpcomingComponent, CompListAllComponent, CompMakeServiceComponent,ServTestService]
