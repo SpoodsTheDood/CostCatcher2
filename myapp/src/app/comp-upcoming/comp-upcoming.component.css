@@ -1,21 +1,12 @@
 *{
-  margin: auto;
   text-align: center;
 }
 
-.cards {
-    display: flex;
-    justify-content: space-between;
-  }
-
   mat-card{
-    align-content: center;
-    align-items: center;
     background-color: #3C1053;
     border-color: #F4AF23;
     border-style:double;
     border-width: 5pt;
-    width: 30%;
   }
   mat-card-header{
     font-size: 50pt;
@@ -24,7 +15,6 @@
   mat-card-title{
     font-size: 50pt;
     background-color: #3C1053;
-    align-items:center;
     color: #4AC9E3;
   }
   mat-grid-list{
@@ -37,7 +27,4 @@
     font-size: 60pt;
     color:#3C1053;
     padding-bottom: 5pt;
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
