@@ -1,23 +1,65 @@
+select{
+  border:#F4AF23;
+  border-style: double;
+  background-color: #3C1053;
+  color: #D7A9E3;
+  width: 97.5%;
+  font-size: 200%;
+  margin: auto;
+  padding: 1%;
+  float: left;
+  display: block;
+}
+button{
+  text-align: center;
+  color:#D7A9E3;
+  background-color: #3C1053;
+  padding: 1%;
+  border:#F4AF23;
+  border-style: groove;
+  font-size: 250%;
+  
+}
+h1{
+  color: #F4AF23;
+}
+input{
+  
+  border:#F4AF23;
+  border-style: double;
+  background-color: #3C1053;
+  color: #D7A9E3;
+  width: 95%;
+  font-size: 200%;
+  margin: auto;
+  padding: 1%;
+  float: left;
+  display: block;
+}
 li{
-    display: inline;
-    background-color: #3C1053;
-    color: #D7A9E3;
-    border-color: #F4AF23;
-    font-size: 25px;
-    float: left;
-    width: 25%;
-  }
-  
-  li a {
-    display: block;
-    text-align: center;
-    padding: 14px ;
-    text-decoration: none;
-  }
-  
-  li a:hover{
-    background-color: #F4AF23;
-  }
-  li a:visited{
-    color: #4AC9E3
-  }
+  display: inline;
+  background-color: #3C1053;
+  color: #D7A9E3;
+  border-color: #F4AF23;
+  font-size: 25px;
+  float: left;
+  width: 25%;
+}
+
+li a {
+  display: block;
+  text-align: center;
+  padding: 14px ;
+  text-decoration: none;
+}
+
+li a:hover{
+  background-color: #F4AF23;
+}
+li a:visited{
+  color: #4AC9E3
+}
+p{
+  color: #D7A9E3;
+  font-size: 40pt;
+}

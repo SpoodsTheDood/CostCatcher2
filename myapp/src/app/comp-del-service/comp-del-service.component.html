@@ -1,4 +1,3 @@
-<p>comp-del-service works!</p>
 
 <div class="navbar">
     <ul>
@@ -8,3 +7,11 @@
       <li><a routerLink="/subtract">Delete Old</a></li>
     </ul>
     </div>
+<h1>Delete a Service</h1>
+<h2>Select a service to delete:</h2>
+<select name="servicesToKill">
+  <ng-container *ngFor="let service of json">
+    <option>{{service.service}}</option>
+  </ng-container>
+</select>
+<button>Delete service</button>

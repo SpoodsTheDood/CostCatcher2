@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,4 +8,16 @@ import { Component } from '@angular/core';
 })
 export class CompChangeServiceComponent {
 
+  url = "http://localhost:3000/services/646f795436775478bda0003f"
+  constructor(private httpClient:HttpClient){
+
+  }
+
+  onModification(serviceInfo: {service:String, price:Number, dueDate:Date}){
+console.log(serviceInfo)
+this.httpClient.put(this.url, serviceInfo)
+.subscribe((res) =>{
+  console.log(res)
+})
+  }
 }

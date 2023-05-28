@@ -5,6 +5,10 @@ import { CompListAllComponent } from '../comp-list-all/comp-list-all.component';
 // ^ most variables are saved in list-all for the sole reason of myconvenience
 import { ServTestService } from '../servtest.service';
 import * as moment from 'moment'
+import {MatNativeDateModule} from '@angular/material/core'
+import {MatDatepickerModule} from '@angular/material/datepicker'
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @Component({
   selector: 'app-comp-make-service',

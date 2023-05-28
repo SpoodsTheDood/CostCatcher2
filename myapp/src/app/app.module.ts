@@ -14,6 +14,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { ServTestService } from './servtest.service';
 import { CompDelServiceComponent } from './comp-del-service/comp-del-service.component';
 import { CompChangeServiceComponent } from './comp-change-service/comp-change-service.component';
+import { FormsModule } from '@angular/forms';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatDateRangePicker, MatDatepickerModule } from '@angular/material/datepicker';
 
 //import { CardModule } from '@coreui/angular'
 
@@ -33,7 +38,12 @@ import { CompChangeServiceComponent } from './comp-change-service/comp-change-se
     AppRoutingModule,
     HttpClientModule,
     MatGridListModule,
-    MatCardModule
+    MatCardModule,
+    FormsModule,
+    MatNativeDateModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatDatepickerModule
   ],
   providers: [],
   bootstrap: [AppComponent, CompUpcomingComponent, CompListAllComponent, CompMakeServiceComponent,ServTestService]
