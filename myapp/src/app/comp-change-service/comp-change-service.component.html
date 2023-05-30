@@ -1,6 +1,11 @@
 
 <p>Select a Service:</p>
 <!-- Add list here -->
+<select name="servicesToChange">
+    <ng-container *ngFor="let service of json">
+      <option>{{service.service}}</option>
+    </ng-container>
+  </select>
 <form #changeServiceForm="ngForm" (ngSubmit)="onModification(changeServiceForm.value)">
 <p>Name:</p>
 <input type="text" name="service" ngModel>

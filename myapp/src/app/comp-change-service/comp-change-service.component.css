@@ -33,9 +33,8 @@ input{
   border-style: double;
   background-color: #3C1053;
   color: #D7A9E3;
-  width: 50%;
+  width: 95%;
   font-size: 200%;
-  margin: auto;
   padding: 1%;
   float: left;
   display: block;
@@ -66,4 +65,7 @@ li a:visited{
 p{
   color: #D7A9E3;
   font-size: 40pt;
+}
+#selection{
+  display: inline-block;
 }

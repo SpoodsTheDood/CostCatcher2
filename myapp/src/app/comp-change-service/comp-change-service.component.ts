@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { ServTestService } from '../servtest.service';
 
 @Component({
   selector: 'app-comp-change-service',
@@ -8,16 +9,17 @@ import { Component } from '@angular/core';
 })
 export class CompChangeServiceComponent {
 
-  url = "http://localhost:3000/services/646f795436775478bda0003f"
-  constructor(private httpClient:HttpClient){
-
-  }
-
+  
+  constructor(private servTestService: ServTestService) { }
+json:any
   onModification(serviceInfo: {service:String, price:Number, dueDate:Date}){
 console.log(serviceInfo)
-this.httpClient.put(this.url, serviceInfo)
-.subscribe((res) =>{
-  console.log(res)
-})
+
+  }
+  ngOnInit() {
+    this.servTestService.getPosts()
+      .subscribe(response => {
+        this.json = response
+      })
   }
 }
