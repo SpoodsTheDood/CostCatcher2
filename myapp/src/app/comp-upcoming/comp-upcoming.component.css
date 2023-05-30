@@ -69,3 +69,8 @@ float: left;
   align-content: center;
 justify-content: space-between;
 }
+
+p{
+  color: #D7A9E3;
+  font-size: 40px;
+}

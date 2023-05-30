@@ -1,7 +1,7 @@
 <div class="heading">
   Coming Up:
 </div>
-    <mat-grid-list cols="2" rowHeight="45%">
+    <mat-grid-list cols="2" rowHeight="42.5%">
       <mat-grid-tile *ngFor="let i of json.slice(0,2)">
         <mat-card>
           <mat-card-header>{{i.service}}</mat-card-header>
@@ -10,7 +10,7 @@
         </mat-card>
       </mat-grid-tile>
     </mat-grid-list>
-    
+    <p>&dArr; All Services &dArr;</p>
     <div class="row">
       <div class="column left">Service Name
         <ol>
@@ -20,14 +20,14 @@
         </ol>
       </div>
     </div>
-    <div class="column middle">Price
+    <div class="column middle">Subscription
       <ol>
         <ng-container *ngFor="let cost of json">
           <li>{{cost.price | currency: "USD"}}</li>
         </ng-container>
       </ol>
     </div>
-    <div class="column right">Days Until Due
+    <div class="column right">Renewal Date
       <ol>
         <ng-container *ngFor="let due of json">
           <li>{{due.dueDate | date: 'MMMM d'}}</li>
