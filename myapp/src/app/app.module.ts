@@ -20,6 +20,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatDateRangePicker, MatDatepickerModule } from '@angular/material/datepicker';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterModule, Routes } from '@angular/router';
 
 //import { CardModule } from '@coreui/angular'
 

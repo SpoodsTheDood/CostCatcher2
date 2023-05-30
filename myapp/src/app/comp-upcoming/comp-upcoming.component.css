@@ -13,18 +13,14 @@
     color: #D7A9E3;
   }
   mat-card-title{
-    font-size: 50pt;
     background-color: #3C1053;
     color: #4AC9E3;
   }
   mat-grid-list{
-    background-color:#3C1053;
-    border: #F4AF23;
-    border-style: groove;
     color: #D7A9E3;
   }
   .heading{
+    padding-top: 10%;
     font-size: 60pt;
     color:#3C1053;
-    padding-bottom: 5pt;
   }
