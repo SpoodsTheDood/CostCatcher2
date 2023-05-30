@@ -5,10 +5,5 @@ body{
 html{
     background:linear-gradient(to bottom right, #890C58, #3C1053);
 }
-.modifierButtons{
-    text-align: center;
-    display: flex;
-    justify-content: space-between;
-}
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
