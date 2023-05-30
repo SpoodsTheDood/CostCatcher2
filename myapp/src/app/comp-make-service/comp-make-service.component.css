@@ -61,14 +61,10 @@ li{
   li a:visited{
     color: #4AC9E3
   }
-  #datePickerID{
-    background-color:#3C1053;
-    border-color: #F4AF23;
-    border-width: 2pt;
+  .picker{
+    background-color: #D7A9E3;
   }
-  mat-form-field{
-    padding-top: 1%;
-  }
+  
 p{
     color: #D7A9E3;
     font-size: 40pt;
