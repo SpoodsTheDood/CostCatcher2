@@ -7,9 +7,10 @@ import { AppComponent } from './app.component';
 import { CompMakeServiceComponent } from './comp-make-service/comp-make-service.component';
 import { CompDelServiceComponent } from './comp-del-service/comp-del-service.component';
 import { CompChangeServiceComponent } from './comp-change-service/comp-change-service.component';
+import { CompUpcomingComponent } from './comp-upcoming/comp-upcoming.component';
 
 const routes: Routes = [
-  { path: '', component:AppComponent },
+  { path: '', component:CompUpcomingComponent },
   { path: 'add', component:CompMakeServiceComponent},
   { path: 'transpose', component:CompChangeServiceComponent},
   { path: 'subtract', component:CompDelServiceComponent}
