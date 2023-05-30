@@ -18,10 +18,11 @@
   mat-grid-list{
     color: #D7A9E3;
   }
-  .heading{
-    padding: 5%;
-    font-size: 45pt;
-    color:#F4AF23;
+  h1{
+      color: #F4AF23;
+      font-size: 45pt;
+      text-align: center;
+      padding: 0%;
   }
 
   

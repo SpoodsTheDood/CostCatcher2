@@ -21,7 +21,9 @@ button{
   
 }
 h1{
-  color: #F4AF23;
+    color: #F4AF23;
+    font-size: 45pt;
+    text-align: center;
 }
 h2{
   color: #D7A9E3;
