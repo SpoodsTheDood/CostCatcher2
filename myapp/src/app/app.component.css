@@ -68,3 +68,8 @@ ul {
   color: #D7A9E3;
   border-color: #F4AF23;
 }
+html{
+  height: 100%;
+    background:linear-gradient(to bottom right, #890C58, #3C1053);
+    background-attachment: fixed;
+}
