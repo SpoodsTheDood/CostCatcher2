@@ -1,21 +1,37 @@
 <div class="heading">
-  Coming Up
+  Coming Up:
 </div>
-<div id="cards">
-  <div class="row">
-    <mat-grid-list cols="2">
+    <mat-grid-list cols="2" rowHeight="45%">
       <mat-grid-tile *ngFor="let i of json.slice(0,2)">
         <mat-card>
           <mat-card-header>{{i.service}}</mat-card-header>
-          <!--<mat-card-title>Test Title 1</mat-card-title>-->
-          <!--<mat-card-subtitle> {{i.service}}</mat-card-subtitle>-->
           <mat-card-content>{{i.price | currency: "USD"}}</mat-card-content>
           <mat-card-footer>{{i.dueDate | date: 'MMMM d'}}</mat-card-footer>
-          <mat-card-actions>
-            <button>Test Button</button>
-          </mat-card-actions>
         </mat-card>
       </mat-grid-tile>
     </mat-grid-list>
-  </div>
-</div>
+    
+    <div class="row">
+      <div class="column left">Service Name
+        <ol>
+         <ng-container *ngFor="let data of json">
+            <li>{{data.service}}</li>
+         </ng-container>
+        </ol>
+      </div>
+    </div>
+    <div class="column middle">Price
+      <ol>
+        <ng-container *ngFor="let cost of json">
+          <li>{{cost.price | currency: "USD"}}</li>
+        </ng-container>
+      </ol>
+    </div>
+    <div class="column right">Days Until Due
+      <ol>
+        <ng-container *ngFor="let due of json">
+          <li>{{due.dueDate | date: 'MMMM d'}}</li>
+        </ng-container>
+      </ol>
+    </div>
+  <br>

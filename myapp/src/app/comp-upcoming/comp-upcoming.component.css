@@ -8,23 +8,64 @@
     border-style:double;
     border-width: 5pt;
   }
+  mat-card-footer{
+    padding-bottom: 5%;
+  }
   mat-card-header{
     font-size: 50pt;
     color: #D7A9E3;
   }
-  mat-card-title{
-    font-size: 50pt;
-    background-color: #3C1053;
-    color: #4AC9E3;
-  }
   mat-grid-list{
-    background-color:#3C1053;
-    border: #F4AF23;
-    border-style: groove;
     color: #D7A9E3;
   }
   .heading{
-    font-size: 60pt;
-    color:#3C1053;
-    padding-bottom: 5pt;
+    padding: 5%;
+    font-size: 45pt;
+    color:#F4AF23;
   }
+
+  
+
+
+
+.column {
+  border:#F4AF23;
+  border-style: double;
+  background-color: #3C1053;
+  color: #D7A9E3;
+  width: 100%;
+  font-size: 200%;
+  margin: auto;
+  padding: 1%;
+  float: left;
+  display: block;
+}
+
+.middle, .right {
+  width: 25%;
+}
+
+.left {
+  width: 40%;
+}
+
+figcaption{
+  color: #D7A9E3;
+  font-size: 20pt;
+}
+
+.heading{ 
+  color: #F4AF23;
+}
+
+ul{
+  align-content: center;
+justify-content: space-between;
+vertical-align: top;
+float: left;
+}
+.ulComp{
+  display: flex;
+  align-content: center;
+justify-content: space-between;
+}
