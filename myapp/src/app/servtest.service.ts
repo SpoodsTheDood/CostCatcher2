@@ -6,7 +6,6 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ServTestService {
   private url = 'http://localhost:3000/services/user/646638e8c7b9a011beca82c1'
-  private deleteUrl = ""
 
   constructor(private httpClient: HttpClient) { }
 
@@ -14,11 +13,11 @@ export class ServTestService {
     return this.httpClient.get(this.url)
   }
 
-  post(url: String, payload: Object) {
-    return this.httpClient.post(this.url, payload)
+  post(postUrl: String ,payload: Object) {
+    return this.httpClient.post(`${postUrl}`, payload)
   }
-  delete() {
-    return this.httpClient.delete(this.deleteUrl)
+  delete(deleteUrl: String) {
+    return this.httpClient.delete(`${deleteUrl}`)
   }
   
 
