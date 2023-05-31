@@ -75,13 +75,17 @@ getDate(){
 }
 
 getBillingPd(){
-  
+  var userInput = <HTMLInputElement>document.getElementById("billingPd")
+  return userInput.value
+}
+
+getServName(){
+  var serviceName = document.getElementById("Usr")
 }
 
 makeNewBill(){
   var dueDate = this.getDate()
-  console.log(dueDate)
-
+  var billingPd = this.getBillingPd()
 }
 
 
