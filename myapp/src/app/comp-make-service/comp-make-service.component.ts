@@ -17,8 +17,6 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 })
 
 export class CompMakeServiceComponent {
-//these bad boys are for when you make a new service
-//will not be used outside of this component
 
 // the specific url for the user we are adding a service to... id is '646638e8c7b9a011beca82c1'
 url = 'http://localhost:3000/services/646638e8c7b9a011beca82c1'
@@ -40,18 +38,7 @@ createService(serviceInfo: Object) {
 
 
 
-newDue = "-1"
-newName = "Default"
-newPrice = "-1.11"
-newPayDay = "-1"
-
-
-//I can't remember why i made these but it breaks if i remove them
-finalDue = -2
-finalPrice = -2.22
-finalPayDay?:number = -2 as number
-
-
+date = ""
 
 setMonthNum(month:String){
   if (month = 'Feb') {return 28}
@@ -59,6 +46,43 @@ setMonthNum(month:String){
   else {return 31}
 }
 
+getMonthNum(monthName:string){
+  var monthNum = "00"
+  if (monthName == 'Jan') monthNum = "01"
+  if (monthName == 'Feb') monthNum = "02"
+  if (monthName == 'Mar') monthNum = "03"
+  if (monthName == 'Apr') monthNum = "04"
+  if (monthName == 'May') monthNum = "05"
+  if (monthName == 'Jun') monthNum = "06"
+  if (monthName == 'Jul') monthNum = "07"
+  if (monthName == 'Aug') monthNum = "08"
+  if (monthName == 'Sep') monthNum = "09"
+  if (monthName == 'Oct') monthNum = "10"
+  if (monthName == 'Nov') monthNum = "11"
+  if (monthName == 'Dec') monthNum = "12"
+  return(monthNum)
+}
+
+getDate(){
+  var dateToString = String(this.date)
+  dateToString = dateToString.substring(4)
+  dateToString = dateToString.substring(0, 11)
+  var dayMonYear = dateToString.split(" ")
+  dayMonYear[0] = this.getMonthNum(dayMonYear[0])
+
+  var jsonApplicableString = (dayMonYear[2]+"-"+dayMonYear[0]+"-"+dayMonYear[1])
+  return(jsonApplicableString)
+}
+
+getBillingPd(){
+  
+}
+
+makeNewBill(){
+  var dueDate = this.getDate()
+  console.log(dueDate)
+
+}
 
 
     }
