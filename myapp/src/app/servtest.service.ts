@@ -16,6 +16,11 @@ export class ServTestService {
   post(postUrl: String ,payload: Object) {
     return this.httpClient.post(`${postUrl}`, payload)
   }
+
+  put(putURL: String, payload:Object){
+    return this.httpClient.put(`${putURL}`, payload)
+  }
+
   delete(deleteUrl: String) {
     return this.httpClient.delete(`${deleteUrl}`)
   }

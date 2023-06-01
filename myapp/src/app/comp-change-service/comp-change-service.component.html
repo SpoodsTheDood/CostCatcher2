@@ -8,9 +8,18 @@
   </select>
 <form #changeServiceForm="ngForm" (ngSubmit)="onModification(changeServiceForm.value)">
 <p>Name:</p>
-<input type="text" name="service" ngModel>
+<input type="text" name="service" id="usrInpName" ngModel>
 <p>Cost:</p>
-<input type="text" name="price" ngModel>
+<input type="text" name="price" id="usrInpCost" ngModel>
+<p>Billing Period:</p>
+<select name="billingPd" id="billingPd">
+  <option value="mnthDate">The Same Day Every Month</option>
+  <option value="mnthSet">Every Exactly 30 Days</option>
+  <option value="wkly">Weekly - Every 7 Days</option>
+  <option value="yrlySet">Every 365 Days</option>
+  <option value="yrlyDate">The Same Day Every Year</option>
+  <option value="biwk">Every 14 Days</option>
+</select>
 <p>Next Payment:</p>
 <mat-form-field>
   <input matInput [matDatepicker]="picker" id="datePickerID">
