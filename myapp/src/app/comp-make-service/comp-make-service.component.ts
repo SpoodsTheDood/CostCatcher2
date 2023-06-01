@@ -9,6 +9,7 @@ import {MatNativeDateModule} from '@angular/material/core'
 import {MatDatepickerModule} from '@angular/material/datepicker'
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';          
+import { error } from 'console';
 
 @Component({
   selector: 'app-comp-make-service',
@@ -30,13 +31,10 @@ constructor(private servTestService: ServTestService) {}
 
 createService(serviceInfo: Object) {
   this.servTestService.post(this.url, serviceInfo).subscribe((response:any) => {
+    console.log(serviceInfo)
     console.log(response)
-
   })
-
 }
-
-
 
 date = ""
 
@@ -63,29 +61,63 @@ getMonthNum(monthName:string){
   return(monthNum)
 }
 
-getDate(){
-  var dateToString = String(this.date)
+convertToJSON(dueDate:String, billingPd:String, serviceName:String, costPerPay:number){
+  const jsonDue = String(dueDate)
+  let stringDate =
+  '{"service":"'+serviceName+'","price":'+costPerPay+',"dueDate":"'+jsonDue+'","billingPeriod":"'+billingPd+'"}'
+  //{"service":"uhhhhhhhhrh","price":76,"dueDate":"2023-06-21","billingPeriod":"yrly"}
+  return JSON.parse(stringDate)
+}
+
+convertDate(oldDate:any){
+  var dateToString = String(oldDate)
   dateToString = dateToString.substring(4)
   dateToString = dateToString.substring(0, 11)
   var dayMonYear = dateToString.split(" ")
   dayMonYear[0] = this.getMonthNum(dayMonYear[0])
-
   var jsonApplicableString = (dayMonYear[2]+"-"+dayMonYear[0]+"-"+dayMonYear[1])
   return(jsonApplicableString)
 }
 
+getCurrDate(){
+  var todayLong = Date()
+  var finalDate = 1
+  return finalDate
+}
+
 getBillingPd(){
   var userInput = <HTMLInputElement>document.getElementById("billingPd")
-  return userInput.value
+  return String(userInput.value)
 }
 
 getServName(){
-  var serviceName = document.getElementById("Usr")
+  var serviceInput = <HTMLInputElement>document.getElementById("usrInpName")
+  var serviceName = String(serviceInput.value)
+  return serviceName
+}
+
+getCost(){
+  var price = (<HTMLInputElement>document.getElementById("usrInpCost")).value
+  if (/^\d+$/.test(price)) return parseInt(price)
+  else return -1
+}
+
+errorCheck(date:string, period:string, name:string, cost:number){
+var errorCode = -1
+
+
+
+return errorCode
 }
 
 makeNewBill(){
-  var dueDate = this.getDate()
+  var dueDate = this.convertDate(this.date)
   var billingPd = this.getBillingPd()
+  var serviceName = this.getServName()
+  var costPerPay = this.getCost()
+  var isValid = this.errorCheck(dueDate, billingPd, serviceName, costPerPay)
+  var jsonObject = this.convertToJSON(dueDate, billingPd, serviceName, costPerPay)
+  this.createService(jsonObject)
 }
 
 
