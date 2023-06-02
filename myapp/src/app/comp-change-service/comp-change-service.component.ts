@@ -10,8 +10,9 @@ import { ServTestService } from '../servtest.service';
 export class CompChangeServiceComponent {
 
   
+url = 'http://localhost:3000/services/64663aeb443cbbae72c32d4e'
   constructor(private servTestService: ServTestService) { }
-json:any
+jsonDL:any
   onModification(serviceInfo: {service:String, price:Number, dueDate:Date}){
 console.log(serviceInfo)
 
@@ -19,17 +20,40 @@ console.log(serviceInfo)
   ngOnInit() {
     this.servTestService.getPosts()
       .subscribe(response => {
-        this.json = response
+        this.jsonDL = response
       })
   }
-  date = ""
-  url = 'http://localhost:3000/services/646638e8c7b9a011beca82c1'
-  createService(serviceInfo: Object) {
+  changeService(serviceInfo: Object) {
     this.servTestService.put(this.url, serviceInfo).subscribe((response:any) => {
       console.log(serviceInfo)
       console.log(response)
     })
   }
+  
+  pickServToChange(){
+  var selection = <HTMLInputElement>document.getElementById("servicesToChange")
+  var selectionString = selection.value
+  console.log(selectionString)
+  var parsedJSON = JSON.parse(this.jsonDL)
+  var stringID = "ERROR"
+  console.log("Begginning change")
+  for (var i of (parsedJSON)){
+    console.log(i)
+    if (i.service == selectionString){
+      stringID = parsedJSON._id
+    }
+  }
+  console.log(stringID)
+  }
+
+  date = ""
+  
+  setMonthNum(month:String){
+    if (month = 'Feb') {return 28}
+    else if (month in ['Apr', 'Jun', 'Sep', 'Nov']) {return 30}
+    else {return 31}
+  }
+  
   getMonthNum(monthName:string){
     var monthNum = "00"
     if (monthName == 'Jan') monthNum = "01"
@@ -65,6 +89,11 @@ console.log(serviceInfo)
     return(jsonApplicableString)
   }
   
+  getCurrDate(){
+    var todayLong = Date()
+    var finalDate = 1
+    return finalDate
+  }
   
   getBillingPd(){
     var userInput = <HTMLInputElement>document.getElementById("billingPd")
@@ -91,13 +120,16 @@ console.log(serviceInfo)
   return errorCode
   }
   
-  makeNewBill(){
+  changeBill(){
     var dueDate = this.convertDate(this.date)
     var billingPd = this.getBillingPd()
     var serviceName = this.getServName()
     var costPerPay = this.getCost()
     var isValid = this.errorCheck(dueDate, billingPd, serviceName, costPerPay)
     var jsonObject = this.convertToJSON(dueDate, billingPd, serviceName, costPerPay)
-    this.createService(jsonObject)
+    this.changeService(jsonObject)
+    this.pickServToChange()
   }
+  
+  
 }

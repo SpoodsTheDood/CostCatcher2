@@ -1,12 +1,11 @@
 
 <h1>Select a Service:</h1>
 <!-- Add list here -->
-<select name="servicesToChange">
-    <ng-container *ngFor="let service of json">
+<select name="servicesToChange" id="servicesToChange">
+    <ng-container *ngFor="let service of jsonDL">
       <option>{{service.service}}</option>
     </ng-container>
   </select>
-<form #changeServiceForm="ngForm" (ngSubmit)="onModification(changeServiceForm.value)">
 <p>Name:</p>
 <input type="text" name="service" id="usrInpName" ngModel>
 <p>Cost:</p>
@@ -22,9 +21,8 @@
 </select>
 <p>Next Payment:</p>
 <mat-form-field>
-  <input matInput [matDatepicker]="picker" id="datePickerID">
+  <input matInput [matDatepicker]="picker" [(ngModel)]="date">
   <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
   <mat-datepicker #picker></mat-datepicker>
 </mat-form-field>
-<input type="submit" value="Update Service">
-</form>
+<button (click)="changeBill()">Submit</button>
