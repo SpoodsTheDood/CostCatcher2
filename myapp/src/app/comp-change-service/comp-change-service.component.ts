@@ -12,7 +12,7 @@ export class CompChangeServiceComponent {
   
 url = 'http://localhost:3000/services/64663aeb443cbbae72c32d4e'
   constructor(private servTestService: ServTestService) { }
-jsonDL:any
+json:any
   onModification(serviceInfo: {service:String, price:Number, dueDate:Date}){
 console.log(serviceInfo)
 
@@ -20,7 +20,7 @@ console.log(serviceInfo)
   ngOnInit() {
     this.servTestService.getPosts()
       .subscribe(response => {
-        this.jsonDL = response
+        this.json = response
       })
   }
   changeService(serviceInfo: Object) {
@@ -34,14 +34,20 @@ console.log(serviceInfo)
   var selection = <HTMLInputElement>document.getElementById("servicesToChange")
   var selectionString = selection.value
   console.log(selectionString)
-  var parsedJSON = JSON.parse(this.jsonDL)
+  var stringJSON = JSON.stringify(this.json)
   var stringID = "ERROR"
   console.log("Begginning change")
-  for (var i of (parsedJSON)){
-    console.log(i)
-    if (i.service == selectionString){
-      stringID = parsedJSON._id
-    }
+  for (var i in this.json){
+    console.log(JSON.stringify(i)) //logs "0"
+    console.log(stringJSON) //logs stringJSON correctly
+    if (JSON.stringify(this.json.service) == (selectionString)){
+      /////////////////////
+      //Issues start here//
+      ////////////////////
+      console.log(stringID) //comp-change-service.component.html:28 ERROR SyntaxError: "undefined" is not valid JSON
+      stringID = this.json._id
+    } else console.log(JSON.parse(this.json.service) + "\n" + this.json.id)
+    //this is meant to be used to pick which _id to use
   }
   console.log(stringID)
   }
@@ -128,7 +134,7 @@ console.log(serviceInfo)
     var isValid = this.errorCheck(dueDate, billingPd, serviceName, costPerPay)
     var jsonObject = this.convertToJSON(dueDate, billingPd, serviceName, costPerPay)
     this.changeService(jsonObject)
-    this.pickServToChange()
+    //this.pickServToChange()
   }
   
   
