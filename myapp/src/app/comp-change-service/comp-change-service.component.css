@@ -64,6 +64,9 @@ li a:hover{
 li a:visited{
   color: #4AC9E3
 }
+mat-form-field{
+  color: #D7A9E3;
+}
 p{
   color: #D7A9E3;
   font-size: 40pt;

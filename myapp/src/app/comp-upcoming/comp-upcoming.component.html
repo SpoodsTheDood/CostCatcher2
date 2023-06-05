@@ -2,7 +2,7 @@
   Coming Up:
 </h1>
     <mat-grid-list cols="2" rowHeight="42.5%">
-      <mat-grid-tile *ngFor="let i of json.slice(0,2)">
+      <mat-grid-tile *ngFor="let i of (json).slice(0,2)">
         <mat-card>
           <mat-card-header>{{i.service}}</mat-card-header>
           <mat-card-content>{{i.price | currency: "USD"}}</mat-card-content>

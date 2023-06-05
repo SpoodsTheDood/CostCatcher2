@@ -10,7 +10,6 @@ import { ServTestService } from '../servtest.service';
 export class CompChangeServiceComponent {
 
   
-url = 'http://localhost:3000/services/64663aeb443cbbae72c32d4e'
   constructor(private servTestService: ServTestService) { }
 json:any
   onModification(serviceInfo: {service:String, price:Number, dueDate:Date}){
@@ -23,34 +22,14 @@ console.log(serviceInfo)
         this.json = response
       })
   }
-  changeService(serviceInfo: Object) {
-    this.servTestService.put(this.url, serviceInfo).subscribe((response:any) => {
+  changeService(newURL:string, serviceInfo: Object) {
+    this.servTestService.put(newURL, serviceInfo).subscribe((response:any) => {
       console.log(serviceInfo)
       console.log(response)
     })
   }
   
-  pickServToChange(){
-  var selection = <HTMLInputElement>document.getElementById("servicesToChange")
-  var selectionString = selection.value
-  console.log(selectionString)
-  var stringJSON = JSON.stringify(this.json)
-  var stringID = "ERROR"
-  console.log("Begginning change")
-  for (var i in this.json){
-    console.log(JSON.stringify(i)) //logs "0"
-    console.log(stringJSON) //logs stringJSON correctly
-    if (JSON.stringify(this.json.service) == (selectionString)){
-      /////////////////////
-      //Issues start here//
-      ////////////////////
-      console.log(stringID) //comp-change-service.component.html:28 ERROR SyntaxError: "undefined" is not valid JSON
-      stringID = this.json._id
-    } else console.log(JSON.parse(this.json.service) + "\n" + this.json.id)
-    //this is meant to be used to pick which _id to use
-  }
-  console.log(stringID)
-  }
+ 
 
   date = ""
   
@@ -82,6 +61,7 @@ console.log(serviceInfo)
     let stringDate =
     '{"service":"'+serviceName+'","price":'+costPerPay+',"dueDate":"'+jsonDue+'","billingPeriod":"'+billingPd+'"}'
     //{"service":"uhhhhhhhhrh","price":76,"dueDate":"2023-06-21","billingPeriod":"yrly"}
+    console.log(stringDate)
     return JSON.parse(stringDate)
   }
   
@@ -118,6 +98,8 @@ console.log(serviceInfo)
     else return -1
   }
   
+ 
+
   errorCheck(date:string, period:string, name:string, cost:number){
   var errorCode = -1
   
@@ -125,16 +107,48 @@ console.log(serviceInfo)
   
   return errorCode
   }
-  
+  pickServToChange(){
+    var selection = <HTMLInputElement>document.getElementById("servicesToChange")
+    var selectionString = selection.value
+    console.log(selectionString)
+    console.log(this.json)
+    var stringJSON = JSON.stringify(this.json)
+    var stringID = "ERROR"
+    console.log("Beginning change")
+    for (var i in this.json){
+      console.log(JSON.stringify(this.json[i]))
+      console.log(stringJSON) //logs stringJSON correctly
+      if (this.json[i].service == (selectionString)){
+        console.log(JSON.stringify(this.json[i]))
+        console.log("Success")
+        /////////////////////
+        //Issues start here//
+        ////////////////////
+        console.log(stringID) 
+        stringID = JSON.stringify(this.json[i]._id)
+        console.log(stringID)   
+      }
+      //this is meant to be used to pick which _id to use
+    }
+    return(stringID)
+    }
   changeBill(){
     var dueDate = this.convertDate(this.date)
+    console.log(dueDate)
     var billingPd = this.getBillingPd()
+    console.log(billingPd)
     var serviceName = this.getServName()
+    console.log(serviceName)
     var costPerPay = this.getCost()
+    console.log(costPerPay)
     var isValid = this.errorCheck(dueDate, billingPd, serviceName, costPerPay)
     var jsonObject = this.convertToJSON(dueDate, billingPd, serviceName, costPerPay)
-    this.changeService(jsonObject)
-    //this.pickServToChange()
+    console.log(jsonObject)
+    var newID = this.pickServToChange()
+    console.log(newID)
+    var newURL = `http://localhost:3000/services/` + JSON.parse(newID)
+    console.log(newURL)
+    this.changeService(newURL, jsonObject)
   }
   
   

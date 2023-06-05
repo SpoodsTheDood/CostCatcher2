@@ -13,21 +13,6 @@ export class CompListAllComponent {
 
   constructor(private servTestService: ServTestService) { }
 
-  updateDate(oldDate:string, billingPd:string){
-    //
-    var newDate = new Date()
-    var dayCt = 0
-    var monDayYear = oldDate.split(" ")
-    if(billingPd = "mnthDate"){
-    var daysWith30 = ["April", "June", "September", "November"]
-    if (monDayYear[0] in daysWith30) dayCt = 30
-    else if (monDayYear[0] = "February") dayCt = 28
-    else dayCt = 31
-    }
-    if (billingPd = "mnthSet") dayCt = 30
-    if (billingPd = "wkly") dayCt = 7
-    if (billingPd = "biwk") dayCt = 14
-  }
 
   ngOnInit() {
     this.servTestService.getPosts()
