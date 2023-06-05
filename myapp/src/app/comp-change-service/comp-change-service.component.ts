@@ -121,9 +121,6 @@ console.log(serviceInfo)
       if (this.json[i].service == (selectionString)){
         console.log(JSON.stringify(this.json[i]))
         console.log("Success")
-        /////////////////////
-        //Issues start here//
-        ////////////////////
         console.log(stringID) 
         stringID = JSON.stringify(this.json[i]._id)
         console.log(stringID)   
@@ -149,6 +146,7 @@ console.log(serviceInfo)
     var newURL = `http://localhost:3000/services/` + JSON.parse(newID)
     console.log(newURL)
     this.changeService(newURL, jsonObject)
+  location.reload()
   }
   
   

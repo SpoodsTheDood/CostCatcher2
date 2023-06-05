@@ -118,6 +118,7 @@ makeNewBill(){
   var isValid = this.errorCheck(dueDate, billingPd, serviceName, costPerPay)
   var jsonObject = this.convertToJSON(dueDate, billingPd, serviceName, costPerPay)
   this.createService(jsonObject)
+  location.reload()
 }
 
 

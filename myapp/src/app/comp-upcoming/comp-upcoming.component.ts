@@ -44,15 +44,34 @@ console.log(dayCt)
 return dayCt
 }
 
-getNextYear(){
-
+getNextYear(year:string){
+  return String(Number(year) + 1)
 }
 
-getNextMonth(){
-
+getNextMonth(month:string){
+  if (month == "12") month = "1"
+  else month = String((Number(month)+1)) 
+  return(month)
 }
 
-getFutureDate(date:string = moment().format("MMMM D"), billingPd:String = "Def"){
+getMonthNum(monthName:string){
+  var monthNum = "00"
+  if (monthName == 'Jan') monthNum = "01"
+  if (monthName == 'Feb') monthNum = "02"
+  if (monthName == 'Mar') monthNum = "03"
+  if (monthName == 'Apr') monthNum = "04"
+  if (monthName == 'May') monthNum = "05"
+  if (monthName == 'Jun') monthNum = "06"
+  if (monthName == 'Jul') monthNum = "07"
+  if (monthName == 'Aug') monthNum = "08"
+  if (monthName == 'Sep') monthNum = "09"
+  if (monthName == 'Oct') monthNum = "10"
+  if (monthName == 'Nov') monthNum = "11"
+  if (monthName == 'Dec') monthNum = "12"
+  return(monthNum)
+}
+
+getFutureDate(date:string = moment().format("MMMM D YYYY"), billingPd:String = "Def"){
   var daysUntilNext = 0
 /*
   <option value="mnthDate">The Same Day Every Month</option>
@@ -62,21 +81,26 @@ getFutureDate(date:string = moment().format("MMMM D"), billingPd:String = "Def")
   <option value="yrlyDate">The Same Day Every Year</option>
   <option value="biwk">Every 14 Days</option>
 */
+var newDate:any
 switch (billingPd){
 case ("mnthDate"):
-  this.getNextMonth()
+  newDate = moment().add('1', 'M')
   break
 case ("mnthSet"):
-  daysUntilNext = 30
+  newDate = moment().add('30', 'd')
   break
 case ("wkly"):
-  daysUntilNext = 7
+  newDate = moment().add('7', 'd')
   break
 case("yrlySet"):
-  this.getNextYear
+  newDate = moment().add('1', 'y')
   break
-
+case("yrlyDate"):
+case("biwk"):
+  newDate = moment().add('14', 'd')
+  break
 }
+return(newDate)
 }
 
 compareDates(newDate:String, oldDates:any){
@@ -85,15 +109,40 @@ compareDates(newDate:String, oldDates:any){
   console.log(oldString)
 }
 
+formatDates(oldDate: string){
+var oldDateArray = oldDate.split(" ")
+console.log(oldDate)
+}
+
 updateDate(){
   var today = this.getToday()
   return today
 }
 
+searchDates(){
+  console.log("Searching...")
+ /* for (var i in this.json){
+    console.log(JSON.stringify(this.json[i]))
+    if (this.json[i].service == (selectionString)){
+      console.log(JSON.stringify(this.json[i]))
+      console.log("Success")
+      console.log(stringID) 
+      stringID = JSON.stringify(this.json[i]._id)
+      console.log(stringID)   
+    }
+  }
+  */
+  console.log(this.json)
+  for (var i in this.json){
+    this.formatDates(JSON.stringify(this.json[i].dueDate))
+  }
+}
+
+
  ngOnInit(){
     this.getServices()
-    var today = this.updateDate()
-    this.compareDates(today, this.json)
+    console.log(this.json)
+    this.searchDates()
   }
 
 
