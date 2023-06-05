@@ -39,6 +39,7 @@ input{
   font-size: 200%;
   float: left;
   display: block;
+  padding: 1%;
 }
 li{
   display: inline;

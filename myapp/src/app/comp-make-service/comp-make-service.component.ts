@@ -63,6 +63,7 @@ getMonthNum(monthName:string){
 
 convertToJSON(dueDate:String, billingPd:String, serviceName:String, costPerPay:number){
   const jsonDue = String(dueDate)
+  console.log(costPerPay)
   let stringDate =
   '{"service":"'+serviceName+'","price":'+costPerPay+',"dueDate":"'+jsonDue+'","billingPeriod":"'+billingPd+'"}'
   //{"service":"uhhhhhhhhrh","price":76,"dueDate":"2023-06-21","billingPeriod":"yrly"}
@@ -98,7 +99,7 @@ getServName(){
 
 getCost(){
   var price = (<HTMLInputElement>document.getElementById("usrInpCost")).value
-  if (/^\d+$/.test(price)) return parseInt(price)
+  if (!isNaN(Number(price))) return Number(price)
   else return -1
 }
 
@@ -115,10 +116,11 @@ makeNewBill(){
   var billingPd = this.getBillingPd()
   var serviceName = this.getServName()
   var costPerPay = this.getCost()
+  console.log(costPerPay)
   var isValid = this.errorCheck(dueDate, billingPd, serviceName, costPerPay)
   var jsonObject = this.convertToJSON(dueDate, billingPd, serviceName, costPerPay)
   this.createService(jsonObject)
-  location.reload()
+  //location.reload()
 }
 
 
