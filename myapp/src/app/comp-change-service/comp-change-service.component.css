@@ -37,7 +37,6 @@ input{
   color: #D7A9E3;
   width: 95%;
   font-size: 200%;
-  padding: 1%;
   float: left;
   display: block;
 }
@@ -73,4 +72,12 @@ p{
 }
 #selection{
   display: inline-block;
+}
+::ng-deep .mdc-text-field--filled:not(.mdc-text-field--disabled){
+  background-color: #3C1053;
+  border-color: #F4AF23;
+  border-style: double;
+}
+::ng-deep .mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__input{ 
+  color: #D7A9E3;
 }

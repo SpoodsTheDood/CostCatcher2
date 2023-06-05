@@ -14,13 +14,7 @@ json: any
   
 constructor(private servTestService: ServTestService) {}
 
-getServices(){
-  this.servTestService.getPosts()
-  .subscribe(response => {
-    this.json = response
-  })
-  
-}
+
 
 getToday(){
   var today = moment()
@@ -71,8 +65,9 @@ getMonthNum(monthName:string){
   return(monthNum)
 }
 
-getFutureDate(date:string = moment().format("MMMM D YYYY"), billingPd:String = "Def"){
+getFutureDate(date:string = String(moment().format("MMMM D YYYY")), billingPd:String = "Def"){
   var daysUntilNext = 0
+  date = this.formatDates(date)
 /*
   <option value="mnthDate">The Same Day Every Month</option>
   <option value="mnthSet">Every Exactly 30 Days</option>
@@ -84,22 +79,28 @@ getFutureDate(date:string = moment().format("MMMM D YYYY"), billingPd:String = "
 var newDate:any
 switch (billingPd){
 case ("mnthDate"):
-  newDate = moment().add('1', 'M')
+  newDate = String(moment().add('1', 'M'))
   break
 case ("mnthSet"):
-  newDate = moment().add('30', 'd')
+  newDate = String(moment().add('30', 'd'))
   break
 case ("wkly"):
-  newDate = moment().add('7', 'd')
+  newDate = String(moment().add('7', 'd'))
   break
 case("yrlySet"):
-  newDate = moment().add('1', 'y')
+  newDate = String(moment().add('1', 'y'))
   break
 case("yrlyDate"):
-case("biwk"):
-  newDate = moment().add('14', 'd')
+  newDate = String(moment().add('365', 'd'))
   break
+case("biwk"):
+  newDate = String(moment().add('14', 'd'))
+  break
+  default:
+    newDate = String(moment().add('30', 'd'))
 }
+console.log(newDate)
+newDate = this.formatMoment(newDate)
 return(newDate)
 }
 
@@ -109,14 +110,41 @@ compareDates(newDate:String, oldDates:any){
   console.log(oldString)
 }
 
+changeService(newURL:string, serviceInfo: Object) {
+  this.servTestService.put(newURL, serviceInfo).subscribe((response:any) => {
+    console.log(serviceInfo)
+    console.log(response)
+    location.reload()
+  })
+}
+
+formatMoment(oldDate:string){
+  var oldDateArray = oldDate.split(" ")
+  oldDateArray[1] = this.getMonthNum(oldDateArray[1])
+  return(oldDateArray[3]+"-"+oldDateArray[1]+"-"+oldDateArray[2])
+}
+
 formatDates(oldDate: string){
-var oldDateArray = oldDate.split(" ")
-console.log(oldDate)
+var oldDateArray = oldDate.split("-")
+oldDateArray[2] = oldDateArray[2].slice(0, (oldDateArray[2].indexOf("T")))
+oldDateArray[0] = oldDateArray[0].substring(1)
+var formattedDate = oldDateArray[0] + "-" + oldDateArray[1] + "-" + oldDateArray[2]
+console.log(formattedDate)
+return formattedDate
 }
 
 updateDate(){
   var today = this.getToday()
   return today
+}
+
+convertToJSON(dueDate:String, billingPd:String, serviceName:String, costPerPay:number){
+  const jsonDue = String(dueDate)
+  let stringDate =
+  '{"service":"'+serviceName+'","price":'+costPerPay+',"dueDate":"'+jsonDue+'","billingPeriod":'+billingPd+'}'
+  //{"service":"uhhhhhhhhrh","price":76,"dueDate":"2023-06-21","billingPeriod":"yrly"}
+  console.log(stringDate)
+  return JSON.parse(stringDate)
 }
 
 searchDates(){
@@ -133,16 +161,36 @@ searchDates(){
   }
   */
   console.log(this.json)
+  var dummy = moment().format("YYYY-MM-DD")
+  console.log(dummy)
   for (var i in this.json){
-    this.formatDates(JSON.stringify(this.json[i].dueDate))
+    if (dummy == this.formatDates(JSON.stringify(this.json[i].dueDate))){
+      var oldDate = JSON.stringify(this.json[i].dueDate)
+      console.log(oldDate)
+      console.log(dummy)
+      var idOfChanger = JSON.stringify(this.json[i]._id)
+      var servName = this.json[i].service
+      var newDue = this.getFutureDate(JSON.stringify(this.json[i].dueDate), JSON.stringify(this.json[i].billingPd))
+      console.log(newDue)
+      var costPerPay = JSON.stringify(this.json[i].price)
+      var billing = JSON.stringify(this.json[i].billingPeriod)
+      console.log(idOfChanger + servName + newDue + costPerPay + billing)
+      var jsonValue = this.convertToJSON(newDue, billing, servName, Number(costPerPay))
+      console.log(jsonValue)
+      var newURL = `http://localhost:3000/services/` + JSON.parse(idOfChanger)
+      this.changeService(newURL, jsonValue)
+      console.log(newURL)
+      }
   }
 }
 
-
  ngOnInit(){
-    this.getServices()
-    console.log(this.json)
+  this.servTestService.getPosts()
+  .subscribe(response => {
+    this.json = response
+    console.log(this.json)//logs correctly at bottom
     this.searchDates()
+  })
   }
 
 
