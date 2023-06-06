@@ -1,17 +1,18 @@
 
-<h1>Select a Service:</h1>
+<h1>Update or Modify a Service:</h1> <!--Added style with margin-->
 <!-- Add list here -->
-<select name="servicesToChange" id="servicesToChange">
+<label>Select a service to Update:</label><!--Changed your <p> into <label>-->
+<select style="margin-bottom: 1%;" name="servicesToChange" id="servicesToChange"> <!--Added style with margin-->
     <ng-container *ngFor="let service of json">
       <option>{{service.service}}</option>
     </ng-container>
   </select>
-<p>Name:</p>
-<input type="text" name="service" id="usrInpName" ngModel>
-<p>Cost:</p>
-<input type="text" name="price" id="usrInpCost" ngModel>
-<p>Billing Period:</p>
-<select name="billingPd" id="billingPd">
+<label>Updated Name:</label><!--Changed your <p> into <label>-->
+<input style="margin-bottom: 1%;" type="text" name="service" id="usrInpName" ngModel><!--Added style with margin-->
+<label>Updated Cost:</label><!--Changed your <p> into <label>-->
+<input style="margin-bottom: 1%;" type="text" name="price" id="usrInpCost" ngModel><!--Added style with margin-->
+<label>Updated Billing Period:</label><!--Changed your <p> into <label>-->
+<select style="margin-bottom: 1%;" name="billingPd" id="billingPd"><!--Added style with margin-->
   <option value="mnthDate">The Same Day Every Month</option>
   <option value="mnthSet">Every Exactly 30 Days</option>
   <option value="wkly">Weekly - Every 7 Days</option>
@@ -19,10 +20,10 @@
   <option value="yrlyDate">The Same Day Every Year</option>
   <option value="biwk">Every 14 Days</option>
 </select>
-<p>Next Payment:</p>
+<label>Updated Due Date:</label><!--Changed your <p> into <label>-->
 <mat-form-field>
   <input matInput [matDatepicker]="picker" [(ngModel)]="date">
   <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
   <mat-datepicker #picker></mat-datepicker>
-</mat-form-field>
-<button (click)="changeBill()">Submit</button>
+</mat-form-field><br>
+<button style="margin-bottom: 1%;" (click)="changeBill()">Submit</button><!--Added style with margin-->

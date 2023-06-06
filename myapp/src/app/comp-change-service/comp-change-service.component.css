@@ -17,12 +17,12 @@ button{
   padding: 1%;
   border:#F4AF23;
   border-style: groove;
-  font-size: 250%;
+  font-size: 3vw;
   
 }
 h1{
     color: #F4AF23;
-    font-size: 45pt;
+    font-size: 4.7vw;
     text-align: center;
 }
 h2{
@@ -67,9 +67,9 @@ li a:visited{
 mat-form-field{
   color: #D7A9E3;
 }
-p{
+p, label{  /*  Added label  */
   color: #D7A9E3;
-  font-size: 40pt;
+  font-size: 2.5vw;
 }
 #selection{
   display: inline-block;
@@ -81,4 +81,7 @@ p{
 }
 ::ng-deep .mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__input{ 
   color: #D7A9E3;
+}
+input, label{
+  display:block;
 }

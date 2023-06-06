@@ -1,13 +1,18 @@
 <h1 id="heading">Add a New Service</h1>
     <br>
+    <label>Choose a Due Date</label><!--Changed your <p> into <label>-->
     <div class="selections">
       <mat-form-field>
         <input matInput [matDatepicker]="picker" [(ngModel)]="date">
         <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
-      </mat-form-field>
-<input type="text" id="usrInpName" name="usrInpName"><p>What is the Service's Name?</p> <br>
-<input type="text" id="usrInpCost" name="usrInpCost"><p>What Does the Service Cost per Billing Period?</p> <br>
+      </mat-form-field><br>
+<label style="margin-bottom: 1%">What is the Service's Name?</label> <br> <!--Changed your <p> into <label>--> 
+<input style="margin-bottom: 1%" type="text" id="usrInpName" name="usrInpName">
+<label>What Does the Service Cost per Billing Period?</label><!--Changed your <p> into <label>-->
+<input style="margin-bottom: 1%"type="text" id="usrInpCost" name="usrInpCost"> <br>
+<label>What is the Billing Period?</label><!--Changed your <p> into <label>-->
+</div>
 <select name="billingPd" id="billingPd">
     <option value="mnthDate">The Same Day Every Month</option>
     <option value="mnthSet">Every Exactly 30 Days</option>
@@ -15,6 +20,6 @@
     <option value="yrlySet">Every 365 Days</option>
     <option value="yrlyDate">The Same Day Every Year</option>
     <option value="biwk">Every 14 Days</option>
-</select> <p>What is the Billing Period?</p> <br>
-</div>
-<button (click)="makeNewBill()">Create Service</button>
+</select>
+
+<button style = "margin: 1%; margin-left: 0%;"(click)="makeNewBill()">Create Service</button>

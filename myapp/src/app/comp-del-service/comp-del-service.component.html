@@ -1,9 +1,9 @@
 
 <h1>Delete a Service</h1>
-<h2>Select a service to delete:</h2>
+<p style="margin-bottom: 0%;">Select a service to delete:</p> <!-- Added style margin -->
 <select name="servicesToKill" id="servicesToKill">
   <ng-container *ngFor="let service of json">
     <option>{{service.service}}</option>
   </ng-container>
 </select>
-<button (click)="deleteService()">Delete service</button>
+<button style="margin-top: 1%;" (click)="deleteService()">Delete service</button><!-- Added style margin -->

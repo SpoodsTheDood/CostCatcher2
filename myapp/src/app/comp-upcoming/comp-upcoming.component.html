@@ -12,7 +12,7 @@
     </mat-grid-list>
     <p>&dArr; All Services &dArr;</p>
     <div class="row">
-      <div class="column left">Service Name
+      <div class="column left"><label>Service Name</label>
         <ol>
          <ng-container *ngFor="let data of json">
             <li>{{data.service}}</li>
@@ -20,14 +20,14 @@
         </ol>
       </div>
     </div>
-    <div class="column middle">Subscription
+    <div class="column middle"><label>Subscription</label>
       <ol>
         <ng-container *ngFor="let cost of json">
           <li>{{cost.price | currency: "USD"}}</li>
         </ng-container>
       </ol>
     </div>
-    <div class="column right">Renewal Date
+    <div class="column right"><label>Due Date</label>
       <ol>
         <ng-container *ngFor="let due of json">
           <li>{{due.dueDate | date: 'MMMM d'}}</li>

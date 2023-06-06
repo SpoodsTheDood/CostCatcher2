@@ -17,12 +17,12 @@ button{
   padding: 1%;
   border:#F4AF23;
   border-style: groove;
-  font-size: 250%;
+  font-size: 3vw;
   
 }
 h1{
     color: #F4AF23;
-    font-size: 45pt;
+    font-size: 4.7vw;
     text-align: center;
 }
 h2{
@@ -67,5 +67,5 @@ li a:visited{
 }
 p{
   color: #D7A9E3;
-  font-size: 40pt;
+  font-size: 2.5vw;
 }

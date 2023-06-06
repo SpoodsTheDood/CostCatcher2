@@ -7,20 +7,22 @@
     border-color: #F4AF23;
     border-style:double;
     border-width: 5pt;
+    padding: 15%;
   }
   mat-card-footer{
     padding-bottom: 5%;
   }
   mat-card-header{
-    font-size: 40pt;
+    font-size: 5vw;
     color: #D7A9E3;
   }
   mat-grid-list{
+    font-size: 2vw;
     color: #D7A9E3;
   }
   h1{
       color: #F4AF23;
-      font-size: 45pt;
+      font-size: 4.7vw;
       text-align: center;
       padding: 0%;
   }
@@ -33,7 +35,6 @@
   border:#F4AF23;
   border-style: double;
   background-color: #3C1053;
-  color: #D7A9E3;
   width: 100%;
   font-size: 200%;
   margin: auto;
@@ -73,5 +74,17 @@ justify-content: space-between;
 
 p{
   color: #D7A9E3;
-  font-size: 40px;
+  font-size: 2vw;
+  margin-bottom: 1%;
+}
+li{
+  font-size: 2.5vw;
+  color: #D7A9E3;
+  text-align: center;
+  text-align: justify;   /* added this, didnt know if you mislabeled ul and li on css  */
+  list-style-position: inside; 
+}
+label{
+  color: #D7A9E3;
+  font-size: 2.75vw;
 }
