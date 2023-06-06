@@ -94,7 +94,7 @@ console.log(serviceInfo)
   
   getCost(){
     var price = (<HTMLInputElement>document.getElementById("usrInpCost")).value
-    if (/^\d+$/.test(price)) return parseInt(price)
+    if (!isNaN(Number(price))) return Number(price)
     else return -1
   }
   
