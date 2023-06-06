@@ -14,40 +14,6 @@ json: any
   
 constructor(private servTestService: ServTestService) {}
 
-
-
-getToday(){
-  var today = moment()
-  var todayFormatted = today.format("MMMM D")
-  return(todayFormatted)
-}
-
-getDaysInMonth(month:string, year:string){
-  var dayCt = -1
-if (month in ["April", "June", "September", "November"]) dayCt = 30
-else if(month = "February"){
-  //leap year moment
-  if (Number(year) % 4 == 0){
-    if (Number(year) % 100 == 0){
-      if(Number(year) % 400 == 0) dayCt = 29 
-        else dayCt = 28
-    } else dayCt = 29
-  } else dayCt = 28
-} else dayCt = 31
-console.log(dayCt)
-return dayCt
-}
-
-getNextYear(year:string){
-  return String(Number(year) + 1)
-}
-
-getNextMonth(month:string){
-  if (month == "12") month = "1"
-  else month = String((Number(month)+1)) 
-  return(month)
-}
-
 getMonthNum(monthName:string){
   var monthNum = "00"
   if (monthName == 'Jan') monthNum = "01"
@@ -104,11 +70,6 @@ newDate = this.formatMoment(newDate)
 return(newDate)
 }
 
-compareDates(newDate:String, oldDates:any){
-
-  var oldString:string = JSON.stringify(oldDates)
-  console.log(oldString)
-}
 
 changeService(newURL:string, serviceInfo: Object) {
   this.servTestService.put(newURL, serviceInfo).subscribe((response:any) => {
@@ -131,11 +92,6 @@ oldDateArray[0] = oldDateArray[0].substring(1)
 var formattedDate = oldDateArray[0] + "-" + oldDateArray[1] + "-" + oldDateArray[2]
 console.log(formattedDate)
 return formattedDate
-}
-
-updateDate(){
-  var today = this.getToday()
-  return today
 }
 
 convertToJSON(dueDate:String, billingPd:String, serviceName:String, costPerPay:number){
