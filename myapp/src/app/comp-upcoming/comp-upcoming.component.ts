@@ -34,16 +34,9 @@ getMonthNum(monthName:string){
 getFutureDate(date:string = String(moment().format("MMMM D YYYY")), billingPd:String = "Def"){
   var daysUntilNext = 0
   date = this.formatDates(date)
-/*
-  <option value="mnthDate">The Same Day Every Month</option>
-  <option value="mnthSet">Every Exactly 30 Days</option>
-  <option value="wkly">Weekly - Every 7 Days</option>
-  <option value="yrlySet">Every 365 Days</option>
-  <option value="yrlyDate">The Same Day Every Year</option>
-  <option value="biwk">Every 14 Days</option>
-*/
 var newDate:any
 switch (billingPd){
+  //manipulates the current date based on the user's billing period
 case ("mnthDate"):
   newDate = String(moment().add('1', 'M'))
   break
